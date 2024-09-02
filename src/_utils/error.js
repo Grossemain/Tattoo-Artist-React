@@ -1,11 +1,10 @@
 import React from 'react';
+import Erreur404 from '../components/public/Error404';
 
 const Error = () => {
     return (
         <div>
-            Error 404 !
-            La page que vous demandez n'existe pas.
-            <a href="/">Retour à la page d'accueil</a>
+            <Erreur404/>
         </div>
     );
 };

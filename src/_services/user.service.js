@@ -19,12 +19,13 @@ let getUser = (uid) => {
 
 /**
  * Ajout d'un utilisateur
- * @param {number} user
+ * @param {number} formData
  * @returns {Promise}
  */
-let addUser = (user) => {
-  return Axios.put("/api/users", user);
+let addUser = (formData) => {
+  return Axios.postForm("/api/register", formData);
 };
+
 
 /**
  * Mise à jour d'un utilisateur

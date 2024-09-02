@@ -1,0 +1,82 @@
+.h1-titleForm{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px;
+    color :#002d4f
+  }
+  
+  .h2-titleForm{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin: 30px;
+    color :#002d4f
+  }
+  .separator{
+    width: 300px;
+    height: 5px;
+    background-color: #ed5436;
+    margin-bottom: 20px; /* Espacement au-dessus et en dessous du séparateur */
+  }
+  
+  .spanColor {
+    color:#ed5436;
+  }
+  .FormContainer{
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    flex-direction: column;  /* Aligne les éléments en colonne */
+    text-align: center;
+  }
+  .HeaderForm {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    flex-direction: column;  /* Aligne les éléments en colonne */
+    background-color: #fff;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    height: 300px;
+  }
+  
+  .labelForm {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: $primary;
+  }
+  
+  .CoordonneesForm {
+    border: solid;
+    border-color: $primary;
+  
+  }
+  
+  .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+    }
+    
+    .checkbox-item {
+      flex: 1 1 calc(33.33% - 10px); /* 3 colonnes */
+      margin: 5px;
+    }
+  
+    .fileForm {
+      border: solid;
+      border-color: $primary;
+  
+    }
+    .fileForm-item {
+      margin: 20px;
+  
+    }
+    
