@@ -29,7 +29,7 @@ const Users = () => {
         userService.deleteUser(UserId)
             .then(res => {
                 // Mise à jour du state pour affichage
-                setUsers((current) => current.filter(User => User.id !== UserId))
+                setUsers((current) => current.filter(User => User.user_id !== UserId))
             })
             .catch(err => console.log(err))
     }
@@ -59,15 +59,21 @@ const Users = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="primary">
-                                            <Link className="text-light text-decoration-none"to={`/admin/user/edit/${User.id}`}>Edit</Link>
+                                            <Link className="text-light text-decoration-none"to={`/admin/user/edit/${User.user_id}`}>Edit</Link>
                                         </Button>
                                     </span>
                                     <span className="m-1">
                                         <Button
                                             variant="danger"
-                                            onClick={() => delUser(User.id)}
+                                            onClick={() => delUser(User.user_id)}
                                         >
                                             Supprimer
+                                        </Button>
+                                    </span>
+                                    <span className="m-1">
+                                    <Button
+                                            variant="success">
+                                            <Link className="text-light text-decoration-none"to={`/admin/user/${User.user_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>

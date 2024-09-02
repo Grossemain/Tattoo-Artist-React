@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
-import ResultatCard from './ResultCard';
+import ResultCard from './ResultCard';
 
 import React, { useState } from 'react';
 
@@ -83,7 +83,7 @@ const SearchForm = () => {
               {results.length > 0 ? (
                 <div className= "row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
                   {results.map((user, index) => (
-                    <ResultatCard key={user} user={user}/>
+                    <ResultCard key={user} user={user}/>
                   ))}
                 </div>
               ) : (

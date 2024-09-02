@@ -11,6 +11,7 @@ const Header = () => {
       <Navbar className="justify-content-end border" bg="light" expand="lg">
         <Nav>
           <Nav.Link href="/register/">Vous etes tatoueur?</Nav.Link>
+          <Nav.Link href="/auth/login/">Connexion</Nav.Link>
         </Nav>
       </Navbar>
       <Navbar className="justify-content-end border" bg="light" expand="lg">

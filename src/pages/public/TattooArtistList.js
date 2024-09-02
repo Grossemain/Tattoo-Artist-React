@@ -5,7 +5,7 @@ import AdvertsList from "../../components/public/Users/UserList";
 import SearchForm from "../../components/public/SearchBar/SearchForm"
 import UserList from "../../components/public/Users/UserList";
 
-const TattooArtist = () => {
+const TattooArtistList = () => {
 
     return (
         <div>
@@ -15,4 +15,4 @@ const TattooArtist = () => {
     );
 };
 
-export default TattooArtist;
+export default TattooArtistList;

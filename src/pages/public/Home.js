@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Banniere from '../../components/public/Banniere';
+// import Banniere from '../../components/public/Banniere';
 import SearchForm from '../../components/public/SearchBar/SearchForm';
 
 
@@ -8,7 +8,7 @@ export class Home extends Component {
   render() {
     return (
         <div className="text-center">
-          <Banniere/>
+          {/* <Banniere/> */}
           <div className="mt-4">
           <h1>Tattoo artist</h1>
           </div>

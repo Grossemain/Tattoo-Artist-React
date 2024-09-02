@@ -33,7 +33,7 @@ let addUser = (formData) => {
  * @returns {Promise}
  */
 let updateUser = (user) => {
-  return Axios.patch("/api/users/" + user.id, user);
+  return Axios.patch("/api/users/" + user.user_id, user);
 };
 
 /**
