@@ -1,0 +1,39 @@
+@import "../settings";
+@import "./home";
+
+/*PROFIL*/
+
+.Profil {
+    display:wrap;
+    .separatorCenter{
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center;     /* Centre verticalement */
+        flex-direction: column;  /* Aligne les éléments en colonne */
+    }
+    img {
+        width:100%;
+        border:solid;
+        border-color:$color-1;
+        border-width: 10px;
+    }
+    .ElementProfil{
+        padding: 15px;
+        margin-top:5px;
+        margin-bottom: 5px;
+        background-color: $color-1;
+        color:$white;
+        font-size:20px;
+        width:auto;
+        text-align: center;
+        a{
+            color:$white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+    .Description {
+        margin-top:15px;
+    }
+
+}

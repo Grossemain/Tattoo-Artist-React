@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom"
 //modifier cette ligne pour Articles, Flashtattoos, pictures, tattooshops, users, artStyles
 
-import { Layout, Home, Register, Merci, Artist, TattooArtistList, Legals, Rgpd } from '../../pages/public/'
+import { Layout, Home, Register, Merci, ArtistProfil, TattooArtistList, Legals, Rgpd } from '../../pages/public/'
 
 import Error from '../../_utils/Error'
 
@@ -16,7 +16,7 @@ const PublicRouter = () => {
             <Route path="register" element={<Register />} />
             <Route path="merci" element={<Merci />} />
             <Route path="tatoueurs" element={<TattooArtistList/>} />
-            <Route path="tatoueur/:uid" element={<Artist />} />
+            <Route path="tatoueur/:uid" element={<ArtistProfil />} />
             <Route path="*" element={<Error />} />
             <Route path="mentions-legales" element={<Legals />} />
             <Route path="rgpd" element={<Rgpd />} />

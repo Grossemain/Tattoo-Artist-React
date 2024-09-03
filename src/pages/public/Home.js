@@ -17,15 +17,7 @@ export class Home extends Component {
             <SearchForm />
           </Row>
         </Container>
-        {/* <ul>
-          <li>Annuaire de tatoueurs</li>
-          <li>Trouve ton artiste par ville</li>
-          <li>Trouve ton artiste par departements</li>
-          <li>Trouve un tatouage</li>
-          <li>Charche un tatoueur par style</li>
-          <li>Découvre des salons de tatouage</li>
-          <li>Suis les actualités des tatoueurs</li>
-        </ul> */}
+        <div className="SectionBgColor-1">
         <Container className="HomeSection-1">
           <div>
             <Row>
@@ -66,6 +58,7 @@ export class Home extends Component {
             </Row>
           </div>
         </Container>
+        </div>
         <Container className="HomeSection-2">
           <div>
           <h3>Comment choisir son tatoueur?</h3>
