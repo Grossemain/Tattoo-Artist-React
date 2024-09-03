@@ -151,9 +151,87 @@ li {
   }
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px; // Ajuste la largeur selon tes besoins
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .card-image {
+    width: 100%;
+    height: 200px; // Ajuste la hauteur selon tes besoins
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card-content {
+    display: flex; /* Utilise flex pour centrer les éléments */
+    flex-wrap: wrap; /* Permet de gérer les éléments sur plusieurs lignes */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    padding: 16px; /* Ajoute un peu de padding pour l'espacement */
+
+    .colonne {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centre verticalement les colonnes dans la ligne */
+      align-items: center; /* Centre horizontalement les éléments dans la colonne */
+      padding: 8px;
+
+      .cell {
+        text-align: center;
+        padding: 8px;
+        background-color: $color-2;
+        border-radius: 20px;
+        color: $white;
+        margin: 8px; /* Ajoute un peu d'espace entre les cellules */
+      }
+    }
+  }
+
+  .card-button {
+    height: 70px;
+    padding: 12px;
+    background-color: $color-1;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-top: 1px solid #ccc;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-2;
+      font-size: 26px;
+    }
+  }
+}
+
+
 .separator{
   width: 300px;
   height: 5px;
   background-color: #ed5436;
   margin-bottom: 20px; /* Espacement au-dessus et en dessous du séparateur */
+}
+
+.pills {
+  display: wrap;
+  text-align: center;
+  padding: 5px 20px 5px 20px;
+  background-color: $color-2;
+  border-radius: 15px;
+  color:$white;
+  width:100%;
 }
