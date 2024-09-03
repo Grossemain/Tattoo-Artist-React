@@ -69,7 +69,7 @@ const SearchForm = () => {
                 </Col>
                 
                 <Col className="d-flex justify-content-end">
-                  <Button className="search-btn rounded-pill btn border-white border-5 py-2 px-3" type="submit">Rechercher</Button>
+                  <Button className="bouton" type="submit">Rechercher</Button>
                 </Col>
               </Row>
             </Form>

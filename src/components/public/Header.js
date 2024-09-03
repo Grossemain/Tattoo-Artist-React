@@ -14,13 +14,16 @@ const Header = () => {
           <Nav.Link href="/auth/login/">Connexion</Nav.Link>
         </Nav>
       </Navbar>
-      <Navbar className="justify-content-end border" bg="light" expand="lg">
+      <Navbar bg="light" expand="lg">
         <Container fluid>
         <Logo />
+        <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
             <Nav>
               <Nav.Link href="/home">Accueil</Nav.Link>
               <Nav.Link href="/tatoueurs">Tatoueurs</Nav.Link>
             </Nav>
+            </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

@@ -1,10 +1,67 @@
-$font-1: "font-1", sans-serif;
+/*DECLARATION VARIABLE CSS*/
 
-$primary: #ed5436;
-$color-1: #c71c1c;
-$color-2: salmon;
-$color-3: #282c34;
+/*FONT*/
+$fontFamily: Arial, Helvetica, sans-serif;
+$fontWeight: 400;
+
+/*COLOR*/
+$color-1: #ed5436;
+$color-2: #002d4f;
+$color-3: #000000;
+$color-4:#333333;
 $white: rgb(243, 243, 243);
+$color-hover:#ed5436;
+
+/* H1*/
+$h1FontSize: 50px;
+$h1Color: $color-2;
+$h1FontWeight:600;
+$h1TextAlign:center;
+$h1TextTransf:uppercase;
+$h1SpanColor:$color-1;
+
+/*H2*/
+$h2FontSize: 40px;
+$h2Color: $color-1;
+$h2FontWeight:600;
+
+/*H3*/
+$h3FontSize: 30px;
+$h3Color: $color-2;
+$h3FontWeight:600;
+$h3TextTransform:uppercase;
+
+/*H4*/
+$h4FontSize: 24px;
+$h4Color: $color-2;
+$h4FontWeight:600;
+
+/*LI*/
+$liColor: $color-3;
+$liFontWeight:500;
+$liSpanColor:$color-2;
+$liSpanFontSize: 24px;
+
+/*VARIABLE SANS PUCES UL SPAN*/
+$sansPucesUlListStyle:none;
+$sansPucesSpanFontSize:24px;
+
+/*BODY*/
+$bodyDisplay:block;
+$bodyMargin: 0px;
+
+/*VARIABLE BOUTON*/
+$boutonBg:$color-1;
+$boutonPadding:10px;
+$boutonMargin:20px;
+$boutonBorder:none;
+$boutonRadius:50px;
+$boutonCursor:pointer;
+$boutonAColor:$white;
+$boutonATextDeco:none;
+$boutonAFontWeight:600;
+$boutonAFontsize:20px;
+
 
 @mixin verticalCenter {
   display: flex;
@@ -20,9 +77,82 @@ $white: rgb(243, 243, 243);
 
 body {
   background: $white;
-  font-family: $font-1;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  display: $bodyDisplay;
+  color: $color-3;
   // @include verticalCenter;
 }
+
+h1{
+  font-size:$h1FontSize;
+  color: $h1Color;
+  font-weight: $h1FontWeight;
+  text-align: $h1TextAlign;
+  text-transform: $h1TextTransf;
+  span {
+    color:$h1SpanColor;
+}
+}
+
+h2{
+  font-size:$h2FontSize;
+  color: $h2Color;
+  font-weight: $h2FontWeight;
+}
+
+h3{
+  font-size:$h3FontSize;
+  color: $h3Color;
+  font-weight: $h3FontWeight;
+  text-transform: $h3TextTransform;
+}
+
+h4{
+  font-size:$h4FontSize;
+  color: $h4Color;
+  font-weight: $h4FontWeight;
+}
+
 li {
-  list-style-type: none;
+  span{
+    color:$liSpanColor;
+    font-size: $liSpanFontSize;
+  }
+}
+/*CSS SANS PUCES*/
+.sans-puces {
+  ul {
+      list-style: $sansPucesUlListStyle;
+      span {
+          font-size:$sansPucesSpanFontSize;
+      }
+  }
+}
+
+/*CSS BOUTON*/
+
+.bouton {
+  background-color:$boutonBg;
+  padding: $boutonPadding;
+  margin: $boutonMargin;
+  border: $boutonBorder;
+  border-radius: $boutonRadius;
+  &:hover {
+      background-color: $color-2;
+      cursor: $boutonCursor;
+  }
+  a{
+      color:$boutonAColor;
+      text-decoration: $boutonATextDeco;
+      font-weight: $boutonAFontWeight;
+      font-size: $boutonAFontsize;
+  }
+}
+
+.separator{
+  width: 300px;
+  height: 5px;
+  background-color: #ed5436;
+  margin-bottom: 20px; /* Espacement au-dessus et en dessous du séparateur */
 }

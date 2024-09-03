@@ -1,0 +1,63 @@
+@import "../settings";
+
+/*HEADER*/
+
+
+.HomeHeader {
+    display: flex;
+    background-color: $white;
+    margin-top:20px;
+    margin-bottom: 50px;
+
+}
+
+.HomeSection-2Col {
+    display: wrap;
+    background-color: $color-1;
+    color:$white;
+    margin-top:20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    h2{
+        color: $color-2;
+        text-align: center;
+        margin:20px;
+    }
+    img{
+        padding:15px;
+    }
+
+// @media (max-width: 600px) {
+//     div {
+//         img {
+
+//         }
+//     }
+// }
+
+}
+
+.HomeSection-Col-Puces {
+    display: wrap;
+    margin-top:20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+    h3{
+        text-align: center;
+        margin:20px;
+    }
+    .ColTextAlignRight {
+        text-align:right;
+        margin-right:10px;
+        padding-right: 15px;
+        border-right:dashed;
+    }
+    .ColTextAlignLeft {
+        text-align:left;
+        margin-left:10px;
+        padding-left: 15px;
+        border-left:dashed;
+    }
+
+}
