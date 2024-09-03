@@ -6,7 +6,7 @@ import SearchForm from "../../components/public/SearchBar/SearchForm";
 export class Home extends Component {
   render() {
     return (
-      <div className="sans-puces">
+      <div>
         <Container className="HomeHeader">
           <Row>
             <div className="mt-4">
@@ -26,7 +26,7 @@ export class Home extends Component {
           <li>Découvre des salons de tatouage</li>
           <li>Suis les actualités des tatoueurs</li>
         </ul> */}
-        <Container className="HomeSection-2Col">
+        <Container className="HomeSection-1">
           <div>
             <Row>
               <h2 className="mt-4">
@@ -66,10 +66,12 @@ export class Home extends Component {
             </Row>
           </div>
         </Container>
-        <Container className="HomeSection-Col-Puces">
+        <Container className="HomeSection-2">
           <div>
           <h3>Comment choisir son tatoueur?</h3>
+          <div className="separatorCenter">
           <span className="separator"></span>
+          </div>
             <Row>
                 <Col className="ColTextAlignRight">
                     <h4>Le style graphique</h4>

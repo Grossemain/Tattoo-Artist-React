@@ -2,7 +2,6 @@
 
 /*HEADER*/
 
-
 .HomeHeader {
     display: flex;
     background-color: $white;
@@ -10,14 +9,21 @@
     margin-bottom: 50px;
 
 }
+/*SECTION 1*/
 
-.HomeSection-2Col {
+.HomeSection-1 {
     display: wrap;
     background-color: $color-1;
     color:$white;
     margin-top:20px;
     margin-bottom: 20px;
     padding: 10px;
+    ul {
+        list-style: $sansPucesUlListStyle;
+        span {
+            font-size:$sansPucesSpanFontSize;
+        }
+    }
     h2{
         color: $color-2;
         text-align: center;
@@ -37,7 +43,9 @@
 
 }
 
-.HomeSection-Col-Puces {
+/*SECTION 2*/
+
+.HomeSection-2{
     display: wrap;
     margin-top:20px;
     margin-bottom: 20px;
@@ -59,5 +67,10 @@
         padding-left: 15px;
         border-left:dashed;
     }
-
+    .separatorCenter{
+        display: flex;
+        justify-content: center; /* Centre horizontalement */
+        align-items: center;     /* Centre verticalement */
+        flex-direction: column;  /* Aligne les éléments en colonne */
+    }
 }
