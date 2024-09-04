@@ -15,28 +15,18 @@ const SideMenu = () => {
             <Nav.Link href="/home">Voir le site</Nav.Link>
 
             <span>USERS</span>
-            {/* <Nav.Link href="/admin/users/index">Tous les utilisateurs</Nav.Link>
-            <Nav.Link href="/admin/users/create">Creer un utilisateur</Nav.Link> */}
 
-            {/* <span>ARTICLES</span>
-            <Nav.Link href="/admin/articles/index">Tous les articles</Nav.Link>
-            <Nav.Link href="/admin/articles/create">Ajouter un article</Nav.Link>
-
-            <span>CATEGORIES</span>
-
-            <span>Types de categories</span>
-            <Nav.Link href="/admin/termcategories/index">Tous les types de categories</Nav.Link>
-            <Nav.Link href="/admin/termcategories/create">Ajouter un type de categorie</Nav.Link>
-
-            <span>Categories</span>
-            <Nav.Link href="/admin/categories/index">Toutes les categories</Nav.Link>
-            <Nav.Link href="/admin/categories/create">Ajouter une categorie</Nav.Link> */}
 
             <span>COMPTE</span>
-            <Nav.Link href="/admin/users/index">Compte</Nav.Link>
+            <Nav.Link href="/admin/users/index">Comptes</Nav.Link>
             <Nav.Link href="/admin/users/edit/:uid">Modifier son compte</Nav.Link>
             <Nav.Link href="#">Deconnection</Nav.Link>
-
+            <span>ARTSTYLES</span>
+            <Nav.Link href="/admin/styles/index">Tous les Styles</Nav.Link>
+            <Nav.Link href="/admin/styles/add">Ajouter un Styles</Nav.Link>
+            <span>PICTURES</span>
+            <Nav.Link href="/admin/pictures/index">Toutes les images</Nav.Link>
+            <Nav.Link href="/admin/pictures/add">Ajouter une image</Nav.Link>
 
           </Nav>
         </Col>

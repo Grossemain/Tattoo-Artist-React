@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom"
 
 import { Layout, Home, Register, Merci } from '../../pages/public/'
 import { ArtistProfil, TattooArtistList} from '../../pages/public/tatoueurs/'
+import { ArtStyleFiche, TattooArtStyleList} from '../../pages/public/artstyles/'
 import { Legals, Rgpd } from '../../pages/public/content/'
 import Error from '../../_utils/Error'
 
@@ -18,6 +19,8 @@ const PublicRouter = () => {
             <Route path="merci" element={<Merci />} />
             <Route path="tatoueurs" element={<TattooArtistList/>} />
             <Route path="tatoueur/:uid" element={<ArtistProfil />} />
+            <Route path="styles" element={<TattooArtStyleList/>} />
+            <Route path="styles/:asid" element={<ArtStyleFiche/>} />
             <Route path="*" element={<Error />} />
             <Route path="mentions-legales" element={<Legals />} />
             <Route path="rgpd" element={<Rgpd />} />

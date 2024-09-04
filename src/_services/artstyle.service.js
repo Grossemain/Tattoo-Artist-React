@@ -10,38 +10,38 @@ let getAllArtstyles = () => {
 
 /**
  * Récupération d'une categorie
- * @param {number} Cid
+ * @param {number} asid
  * @returns {Promise}
  */
-let getArtstyle = (ASid) => {
-  return Axios.get("/api/artstyles/" + ASid);
+let getArtstyle = (asid) => {
+  return Axios.get("/api/artstyles/" + asid);
 };
 
 /**
  * Ajout d'une categorie
- * @param {number} artsyle
+ * @param {number} artstyle
  * @returns {Promise}
  */
-let addArtstyle = (artsyle) => {
-  return Axios.post("/api/artstyles", artsyle);
+let addArtstyle = (artstyle) => {
+  return Axios.post("/api/artstyles", artstyle);
 };
 
 /**
  * Mise à jour d'une categorie
- * @param {number} artsyle
+ * @param {number} artstyle
  * @returns {Promise}
  */
-let updateArtstyle = (artsyle) => {
-  return Axios.patch("/api/artstyles/" + artsyle.id, artsyle);
+let updateArtstyle = (artstyle) => {
+  return Axios.patch("/api/artstyles/" + artstyle.artstyle_id, artstyle);
 };
 
 /**
  * Suppression d'une categorie
- * @param {number} ASid
+ * @param {number} asid
  * @returns {Promise}
  */
-let deleteArtstyle = (ASid) => {
-  return Axios.delete("/api/artstyles/" + ASid);
+let deleteArtstyle = (asid) => {
+  return Axios.delete("/api/artstyles/" + asid);
 };
 
 // Déclaration des services pour import
