@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import '../src/App.css';
 import PublicRouter from './pages/public/PublicRouter';
 import AdminRouter from './pages/admin/AdminRouter';
 import AuthRouter from './pages/auth/AuthRouter';

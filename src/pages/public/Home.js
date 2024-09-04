@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import Banniere from '../../components/public/Banniere';
 import SearchForm from "../../components/public/SearchBar/SearchForm";
 
 export class Home extends Component {

@@ -2,8 +2,9 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom"
 //modifier cette ligne pour Articles, Flashtattoos, pictures, tattooshops, users, artStyles
 
-import { Layout, Home, Register, Merci, ArtistProfil, TattooArtistList, Legals, Rgpd } from '../../pages/public/'
-
+import { Layout, Home, Register, Merci } from '../../pages/public/'
+import { ArtistProfil, TattooArtistList} from '../../pages/public/tatoueurs/'
+import { Legals, Rgpd } from '../../pages/public/content/'
 import Error from '../../_utils/Error'
 
 
