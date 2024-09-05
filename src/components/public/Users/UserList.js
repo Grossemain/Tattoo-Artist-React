@@ -19,14 +19,13 @@ const UserList = () => {
   };
 
   return (
-    <div>
-
-      <div className="row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
-        {Users.map((user, index) => (
-          <UserCard key={index} user={user} />
-        ))}
-      </div>
-    </div>
+<div>
+  <div className="row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
+    {Users.map((user, index) => (
+      user.role_id !== 2 && user.user_id >= 4 && <UserCard key={index} user={user} />
+    ))}
+  </div>
+</div>
   );
 };
 

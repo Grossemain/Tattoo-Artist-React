@@ -41,9 +41,9 @@ const Users = () => {
                 <thead>
                     <tr>
                     <th>id</th>
+                    <th>Role Id</th>
                         <th>Pseudo</th>
                         <th>email</th>
-                        <th>Email</th>
                         <th>Created</th>
                         <th>Actions</th>
                     </tr>
@@ -51,7 +51,8 @@ const Users = () => {
                 <tbody>
                     {Users.map((User) => (
                             <tr key={User.id}>
-                                <td>{User.id}</td>
+                                <td>{User.user_id}</td>
+                                <td>{User.role_id}</td>
                                 <td>{User.pseudo_user}</td>
                                 <td>{User.email}</td>
                                 <td>{User.created_at}</td>

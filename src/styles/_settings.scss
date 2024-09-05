@@ -172,10 +172,11 @@ li {
 
   .card-image {
     width: 100%;
-    height: 200px; // Ajuste la hauteur selon tes besoins
-    background-size: cover;
-    background-position: center;
+    height: 200px; /* Ajuste la hauteur selon tes besoins */
+    object-fit: cover;
+    object-position: center;
   }
+  
 
   .card-title {
     display: flex;

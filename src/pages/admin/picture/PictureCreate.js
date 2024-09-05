@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 
+
 const PictureCreate = () => {
   const navigate = useNavigate();
   const [PictureName, setPictureName] = useState("");
@@ -96,6 +97,7 @@ const PictureCreate = () => {
                 />
               </Form.Group>
             </Form.Group>
+
             <Button variant="primary" type="submit" className="w-100">
               Créer les images
             </Button>
