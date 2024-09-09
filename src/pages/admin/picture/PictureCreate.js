@@ -18,6 +18,8 @@ const PictureCreate = () => {
   const [PictureAlt, setPictureAlt] = useState("");
   const [PictureImage, setPictureImage] = useState("");
   const [validationError, setValidationError] = useState({});
+  const token = localStorage.getItem("token");
+
   const changeHandler = (event) => {
     setPictureImage(event.target.files[0]);
   };
@@ -31,7 +33,13 @@ const PictureCreate = () => {
     formData.append("image", PictureImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/pictures`, formData)
+      .post(`http://127.0.0.1:8000/api/pictures`, formData,
+        {
+          headers: {
+          Authorization :`Bearer ${token}`
+        }
+      }
+      )
       .then(navigate("/home"))
       .catch(({ response }) => {
         if (response.status === 422) {
@@ -47,9 +55,9 @@ const PictureCreate = () => {
           <h2 className="text-center mb-4"> Ajout de nouvelles images</h2>
           <Form onSubmit={PictureAdd}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Nom de l'auteur</Form.Label>
+              {/* <Form.Label>Nom de l'auteur</Form.Label> */}
               <Form.Control
-                type="text"
+                type="text" hidden
                 placeholder="id"
                 name="user_id"
                 onChange={(event) => {

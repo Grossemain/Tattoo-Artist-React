@@ -19,7 +19,8 @@ const SideMenu = () => {
 
             <span>COMPTE</span>
             <Nav.Link href="/admin/users/index">Comptes</Nav.Link>
-            <Nav.Link href="/admin/users/edit/:uid">Modifier son compte</Nav.Link>
+            <Nav.Link href="/admin/users/edit/:user">Modifier son compte</Nav.Link>
+            <Nav.Link href="/admin/users/add">Creer un compte</Nav.Link>
             <Nav.Link href="#">Deconnection</Nav.Link>
             <span>ARTSTYLES</span>
             <Nav.Link href="/admin/styles/index">Tous les Styles</Nav.Link>
@@ -27,6 +28,9 @@ const SideMenu = () => {
             <span>PICTURES</span>
             <Nav.Link href="/admin/pictures/index">Toutes les images</Nav.Link>
             <Nav.Link href="/admin/pictures/add">Ajouter une image</Nav.Link>
+            <span>FLASHTATTOOS</span>
+            <Nav.Link href="/admin/flashtattoos/index">Tous les Flash</Nav.Link>
+            <Nav.Link href="/admin/flashtattoos/add">Ajouter un flash</Nav.Link>
 
           </Nav>
         </Col>

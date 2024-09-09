@@ -1,6 +1,7 @@
 export { default as Layout } from './Layout'
 export { default as Home } from './Home'
 export { default as Register } from './Register'
+export { default as RegisterUpdate } from './RegisterUpdate'
 export { default as Merci } from './Merci'
 
 export { default as TattooArtistList } from './tatoueurs/TattooArtistList'

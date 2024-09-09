@@ -39,7 +39,7 @@ const ArtstyleEdit = () => {
   const changeHandler = (event) => {
     setArtstyleImage(event.target.files[0]);
   };
-  //Fonction d'ajout de artsyle
+  //Fonction de modification de artsyle
   const updateArtstyle = async (e) => {
     e.preventDefault();
     const formData = new FormData();

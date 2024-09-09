@@ -3,19 +3,19 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 import { Link } from 'react-router-dom'
-import { pictureService } from '../../../_services/picture.service';
+import { flashtattooService } from '../../../_services/flashtattoo.service';
 
-const Pictures = () => {
-    const [Pictures, setPictures] = useState([])
+const FlashTattoos = () => {
+    const [FlashTattoos, setFlashTattoos] = useState([])
     const flag = useRef(false)
 
     // Récupération de la liste des utilisateurs à l'affichage
     useEffect(() => {
         if(flag.current === false){
-            pictureService.getAllPictures()
+            flashtattooService.getAllFlashTattoos()
                 .then(res => {
                     // Liste dans le state
-                    setPictures(res.data)
+                    setFlashTattoos(res.data)
                 })
                 .catch(err => console.log(err))
         }
@@ -25,11 +25,11 @@ const Pictures = () => {
     }, [])
 
     // Gestion du bouton de suppression d'un utilisateur
-    const delPicture = (PictureId) => {
-        pictureService.deletePicture(PictureId)
+    const delFlashTattoo = (FlashTattooId) => {
+        flashtattooService.deleteFlashTattoo(FlashTattooId)
             .then(res => {
                 // Mise à jour du state pour affichage
-                setPictures((current) => current.filter(Picture => Picture.id !== PictureId))
+                setFlashTattoos((current) => current.filter(FlashTattoo => FlashTattoo.id !== FlashTattooId))
             })
             .catch(err => console.log(err))
     }
@@ -43,28 +43,30 @@ const Pictures = () => {
                     <th>id</th>
                     <th>User-id</th>
                         <th>Image</th>
-                        <th>alt</th>
+                        <th>titre</th>
+                        <th>Dispo</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {Pictures.map((Picture) => (
-                            <tr key={Picture.id}>
-                                <td>{Picture.picture_id}</td>
-                                <td>{Picture.user_id}</td>
-                                <td>{Picture.image}</td>
-                                <td>{Picture.alt}</td>
+                    {FlashTattoos.map((FlashTattoo) => (
+                            <tr key={FlashTattoo.id}>
+                                <td>{FlashTattoo.flashtattoo_id}</td>
+                                <td>{FlashTattoo.user_id}</td>
+                                <td>{FlashTattoo.img_flashtattoo}</td>
+                                <td>{FlashTattoo.h1_title}</td>
+                                <td>{FlashTattoo.disponibility}</td>
                                 <td>
                                     <span className="m-1">
                                     <Button
                                             variant="primary">
-                                            <Link className="text-light text-decoration-none"to={`/admin/pictures/edit/${Picture.picture_id}`}>Edit</Link>
+                                            <Link className="text-light text-decoration-none"to={`/admin/flashtattoos/edit/${FlashTattoo.flashtattoo_id}`}>Edit</Link>
                                         </Button>
                                     </span>
                                     <span className="m-1">
                                         <Button
                                             variant="danger"
-                                            onClick={() => delPicture(Picture.picture_id)}
+                                            onClick={() => delFlashTattoo(FlashTattoo.flashtattoo_id)}
                                         >
                                             Supprimer
                                         </Button>
@@ -72,7 +74,7 @@ const Pictures = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="success">
-                                            <Link className="text-light text-decoration-none"to={`/pictures/${Picture.picture_id}`}>Voir</Link>
+                                            <Link className="text-light text-decoration-none"to={`/flashtattoos/${FlashTattoo.flashtattoo_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>
@@ -86,4 +88,4 @@ const Pictures = () => {
     );
 };
 
-export default Pictures;
+export default FlashTattoos;

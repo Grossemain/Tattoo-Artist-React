@@ -74,7 +74,7 @@ const Users = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="success">
-                                            <Link className="text-light text-decoration-none"to={`/admin/user/${User.user_id}`}>Voir</Link>
+                                            <Link className="text-light text-decoration-none"to={`/tatoueur/${User.user_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>

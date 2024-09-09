@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ALayout, Dashboard } from "../admin";
-import { User } from "../admin/user/";
+import { UEdit, User, UAdd } from "../admin/user/";
 import {Artstyles, ASAdd, ASEdit } from "../admin/artstyle"
-import {Pictures, PAdd} from "../admin/picture"
+import {Pictures, PAdd, PEdit} from "../admin/picture"
+import {FlashTattoos, FTAdd, FTEdit } from "../admin/flashTattoo"
 //modifier cette ligne pour Articles, Flashtattoos, pictures, tattooshops, users, artStyles
 
 // import { User, UEdit} from '../admin/user'
@@ -18,6 +19,8 @@ const AdminRouter = () => {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="users">
           <Route path="index" element={<User />} />
+          <Route path="add" element={<UAdd />} />
+          <Route path="edit/:user" element={<UEdit />} />
         </Route>
         <Route path="styles">
           <Route path="index" element={<Artstyles />} />
@@ -26,8 +29,13 @@ const AdminRouter = () => {
         </Route>
         <Route path="pictures">
           <Route path="index" element={<Pictures />} />
-            {/* <Route path="edit/:picture" element={<PEdit/>}/> */}
+            <Route path="edit/:picture" element={<PEdit/>}/>
             <Route path="add" element={<PAdd/>}/>
+        </Route>
+        <Route path="flashtattoos">
+          <Route path="index" element={<FlashTattoos />} />
+            <Route path="edit/:flashTattoo" element={<FTEdit/>}/>
+            <Route path="add" element={<FTAdd/>}/>
         </Route>
 
         <Route path="*" element={<Error />} />
