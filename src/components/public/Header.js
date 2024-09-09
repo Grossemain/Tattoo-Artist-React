@@ -23,6 +23,7 @@ const Header = () => {
               <Nav.Link href="/home">Accueil</Nav.Link>
               <Nav.Link href="/tatoueurs">Tatoueurs</Nav.Link>
               <Nav.Link href="/styles">Styles</Nav.Link>
+              <Nav.Link href="/galerie">Galerie</Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>
