@@ -5,6 +5,8 @@ import { UEdit, User, UAdd } from "../admin/user/";
 import {Artstyles, ASAdd, ASEdit } from "../admin/artstyle"
 import {Pictures, PAdd, PEdit} from "../admin/picture"
 import {FlashTattoos, FTAdd, FTEdit } from "../admin/flashTattoo"
+import {TattooShops, TSAdd, TSEdit} from "../admin/tattooShop"
+
 //modifier cette ligne pour Articles, Flashtattoos, pictures, tattooshops, users, artStyles
 
 // import { User, UEdit} from '../admin/user'
@@ -36,6 +38,11 @@ const AdminRouter = () => {
           <Route path="index" element={<FlashTattoos />} />
             <Route path="edit/:flashTattoo" element={<FTEdit/>}/>
             <Route path="add" element={<FTAdd/>}/>
+        </Route>
+        <Route path="tattooshops">
+          <Route path="index" element={<TattooShops />} />
+            <Route path="edit/:tattooShop" element={<TSEdit/>}/>
+            <Route path="add" element={<TSAdd/>}/>
         </Route>
 
         <Route path="*" element={<Error />} />

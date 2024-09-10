@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
-import PictureCard from "./PictureCard"
+import PictureGalleryCard from "./PictureGalleryCard"
 
-const PictureList = () => {
+const PictureGalleryList = () => {
   useEffect(() => {
     displayPictures();
   }, []); // Sans les crochets ça tourne en boucle
@@ -21,11 +21,11 @@ const PictureList = () => {
     <div>
       <div className="row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
         {Pictures.map((picture, index) => (
-          <PictureCard key={index} picture={picture} />
+          <PictureGalleryCard key={index} picture={picture} />
         ))}
       </div>
     </div>
   );
 };
 
-export default PictureList;
+export default PictureGalleryList;

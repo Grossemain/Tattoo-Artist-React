@@ -42,7 +42,7 @@ const PictureEdit = () => {
   const changeHandler = (event) => {
     setPictureImage(event.target.files[0]);
   };
-  //Fonction d'ajout de artstyle
+  //Fonction de modification de picture
   const updatePicture = async (e) => {
     e.preventDefault();
     const formData = new FormData();

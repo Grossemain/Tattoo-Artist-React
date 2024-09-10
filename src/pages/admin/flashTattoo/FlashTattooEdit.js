@@ -29,6 +29,7 @@ const FlashTattooEdit = () => {
   // GET - Récupère les valeurs de la fiche avec l'API
 
   const getFlashTattoo = async () => {
+    console.log('flashTattoo:',flashTattoo)
     await axios
       .get(`http://127.0.0.1:8000/api/flashtattoos/${flashTattoo}`)
       .then((res) => {

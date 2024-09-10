@@ -31,6 +31,9 @@ const SideMenu = () => {
             <span>FLASHTATTOOS</span>
             <Nav.Link href="/admin/flashtattoos/index">Tous les Flash</Nav.Link>
             <Nav.Link href="/admin/flashtattoos/add">Ajouter un flash</Nav.Link>
+            <span>TATTOOSHOPS</span>
+            <Nav.Link href="/admin/tattooshops/index">Tous les TattooShops</Nav.Link>
+            <Nav.Link href="/admin/tattooshops/add">Ajouter un TattooShop</Nav.Link>
 
           </Nav>
         </Col>

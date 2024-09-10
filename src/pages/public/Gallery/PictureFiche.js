@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { pictureService } from "../../../_services";
+import { userService, pictureService } from "../../../_services";
 import { useParams } from "react-router-dom";
 
 const PictureFiche = () => {
@@ -16,6 +16,7 @@ const PictureFiche = () => {
     // eslint-disable-next-line
   }, []);
   console.log("Picture:" + picture);
+
   return (
     <div className="Profil">
       <Container>
@@ -24,13 +25,23 @@ const PictureFiche = () => {
           <div className="separatorCenter">
             <span className="separator"></span>
           </div>
-          <Col sm={4}>
+          <Col sm={10}>
             <img
               src={`http://127.0.0.1:8000/storage/uploads/${picture.image}`}
               alt={`${picture.alt}`}
             />
           </Col>
-
+          <Col sm={2}>
+            {picture.user && (
+              <div className="ElementProfil">{picture.user.pseudo_user}</div>
+            )}
+            {picture.user && (
+              <div className="ElementProfil">{picture.user.city} </div>
+            )}
+                        {picture.user && (
+              <div className="ElementProfil">{picture.user.departement} </div>
+            )}
+          </Col>
         </Row>
       </Container>
     </div>

@@ -6,6 +6,7 @@ import { Layout, Home, Register, RegisterUpdate, Merci } from '../../pages/publi
 import { ArtistProfil, TattooArtistList} from '../../pages/public/tatoueurs/'
 import { ArtStyleFiche, TattooArtStyleList} from '../../pages/public/artstyles/'
 import { PictureFiche, PicturesList} from '../../pages/public/Gallery'
+import { FlashFiche, FlashList} from '../../pages/public/Flash'
 
 import { Legals, Rgpd } from '../../pages/public/content/'
 import Error from '../../_utils/Error'
@@ -20,12 +21,18 @@ const PublicRouter = () => {
             <Route path="register" element={<Register />} />
             <Route path="compte" element={<RegisterUpdate />} />
             <Route path="merci" element={<Merci />} />
+
             <Route path="tatoueurs" element={<TattooArtistList/>} />
             <Route path="tatoueur/:uid" element={<ArtistProfil />} />
+
             <Route path="styles" element={<TattooArtStyleList/>} />
             <Route path="styles/:asid" element={<ArtStyleFiche/>} />
+            
             <Route path="galerie" element={<PicturesList/>} />
             <Route path="galerie/:pid" element={<PictureFiche/>} />
+
+            <Route path="flash" element={<FlashList/>} />
+            <Route path="flash/:ftid" element={<FlashFiche/>} />
 
             <Route path="*" element={<Error />} />
             <Route path="mentions-legales" element={<Legals />} />

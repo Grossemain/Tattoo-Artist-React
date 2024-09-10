@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { userService } from "../../../_services";
 import { useParams } from "react-router-dom";
+import PictureGalleryList from "../../../components/public/Pictures/PictureGalleryList";
 
 const ArtistProfil = () => {
   const [artist, setArtist] = useState({});
@@ -38,17 +39,29 @@ const ArtistProfil = () => {
               </Col>
             </Row>
             <Row>
-                <Col><div  className="ElementProfil"><a href={`${artist.instagram}`}>Instagram</a></div></Col>
+              <Col>
+                <div className="ElementProfil">
+                  <a href={`${artist.instagram}`}>Instagram</a>
+                </div>
+              </Col>
             </Row>
             <Row>
-            <Col><div className="ElementProfil"><a href={`tel:${artist.tel}`}>Appeler</a></div></Col>
-            <Col><div className="ElementProfil"><a href={`mailto:${artist.email_contact}`}>Contact</a></div></Col>
+              <Col>
+                <div className="ElementProfil">
+                  <a href={`tel:${artist.tel}`}>Appeler</a>
+                </div>
+              </Col>
+              <Col>
+                <div className="ElementProfil">
+                  <a href={`mailto:${artist.email_contact}`}>Contact</a>
+                </div>
+              </Col>
             </Row>
           </Col>
           <Col sm={8}>
             <div className="Description">{artist.description}</div>
             <div className="Gallerie">
-{/* /creer un composant image list de Mui/ */}
+              <PictureGalleryList className="galerie"/>
             </div>
           </Col>
         </Row>

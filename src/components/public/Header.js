@@ -24,6 +24,7 @@ const Header = () => {
               <Nav.Link href="/tatoueurs">Tatoueurs</Nav.Link>
               <Nav.Link href="/styles">Styles</Nav.Link>
               <Nav.Link href="/galerie">Galerie</Nav.Link>
+              <Nav.Link href="/flash">Tattoo Flash</Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Container>

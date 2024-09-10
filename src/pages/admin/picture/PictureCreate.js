@@ -40,7 +40,7 @@ const PictureCreate = () => {
         }
       }
       )
-      .then(navigate("/home"))
+      .then(navigate("/admin"))
       .catch(({ response }) => {
         if (response.status === 422) {
           setValidationError(response.data.errors);
