@@ -18,14 +18,19 @@ const TattooShopCard = ({ tattooshop }) => {
         </Card.Title>
         <Card.Body className="card-content">
           <Card.Text>{tattooshop.meta_description}</Card.Text>
-          <Card.Text>{tattooshop.adresse}</Card.Text>
-          <Card.Text>{tattooshop.city}</Card.Text>
-          <Card.Text>{tattooshop.departement}</Card.Text>
+          <Row>
+            <Col className="colonne">
+              <span className="cell">{tattooshop.city}</span>
+            </Col>
+            <Col className="colonne">
+              <span className="cell">{tattooshop.departement}</span>
+            </Col>
+          </Row>
         </Card.Body>
         <Row className="card-button">
           <Link
             className="text-light text-decoration-none"
-            to={`/galerie/${tattooshop.tattooshop_id}`}
+            to={`/tattooshop/${tattooshop.tattooshop_id}`}
           >
             {tattooshop.name}
           </Link>

@@ -22,7 +22,7 @@ const FlashTattooCard = ({ flashtattoo }) => {
         <Row className="card-button">
           <Link
             className="text-light text-decoration-none"
-            to={`/galerie/${flashtattoo.flashtattoo_id}`}
+            to={`/flash/${flashtattoo.flashtattoo_id}`}
           >
             {flashtattoo.title}
           </Link>
