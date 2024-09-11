@@ -3,19 +3,19 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 import { Link } from 'react-router-dom'
-import { tattooshopService } from '../../../_services/tattooshop.service';
+import { articleService } from '../../../_services/article.service';
 
-const TattooShops = () => {
-    const [TattooShops, setTattooShops] = useState([])
+const Articles = () => {
+    const [Articles, setArticles] = useState([])
     const flag = useRef(false)
 
     // Récupération de la liste des utilisateurs à l'affichage
     useEffect(() => {
         if(flag.current === false){
-            tattooshopService.getAllTattooShops()
+            articleService.getAllArticles()
                 .then(res => {
                     // Liste dans le state
-                    setTattooShops(res.data)
+                    setArticles(res.data)
                 })
                 .catch(err => console.log(err))
         }
@@ -25,11 +25,11 @@ const TattooShops = () => {
     }, [])
 
     // Gestion du bouton de suppression d'un utilisateur
-    const delTattooShop = (TattooShopId) => {
-        tattooshopService.deleteTattooShop(TattooShopId)
+    const delArticle = (ArticleId) => {
+        articleService.deleteArticle(ArticleId)
             .then(res => {
                 // Mise à jour du state pour affichage
-                setTattooShops((current) => current.filter(TattooShop => TattooShop.id !== TattooShopId))
+                setArticles((current) => current.filter(Article => Article.id !== ArticleId))
             })
             .catch(err => console.log(err))
     }
@@ -41,28 +41,30 @@ const TattooShops = () => {
                 <thead>
                     <tr>
                     <th>id</th>
-                        <th>Nom</th>
+                        <th>title</th>
                         <th>Image</th>
+                        <th>Tattooshop_id</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {TattooShops.map((TattooShop) => (
-                            <tr key={TattooShop.id}>
-                                <td>{TattooShop.tattooshop_id}</td>
-                                <td>{TattooShop.name}</td>
-                                <td>{TattooShop.img_tattooshop}</td>
+                    {Articles.map((Article) => (
+                            <tr key={Article.id}>
+                                <td>{Article.article_id}</td>
+                                <td>{Article.title}</td>
+                                <td>{Article.img}</td>
+                                <td>{Article.tattooshop_id}</td>
                                 <td>
                                     <span className="m-1">
                                     <Button
                                             variant="primary">
-                                            <Link className="text-light text-decoration-none"to={`/admin/tattooshops/edit/${TattooShop.tattooshop_id}`}>Edit</Link>
+                                            <Link className="text-light text-decoration-none"to={`/admin/articles/edit/${Article.article_id}`}>Edit</Link>
                                         </Button>
                                     </span>
                                     <span className="m-1">
                                         <Button
                                             variant="danger"
-                                            onClick={() => delTattooShop(TattooShop.tattooshop_id)}
+                                            onClick={() => delArticle(Article.article_id)}
                                         >
                                             Supprimer
                                         </Button>
@@ -70,7 +72,7 @@ const TattooShops = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="success">
-                                            <Link className="text-light text-decoration-none"to={`/tattooshops/${TattooShop.tattooshop_id}`}>Voir</Link>
+                                            <Link className="text-light text-decoration-none"to={`/articles/${Article.article_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>
@@ -84,4 +86,4 @@ const TattooShops = () => {
     );
 };
 
-export default TattooShops;
+export default Articles;
