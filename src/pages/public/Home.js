@@ -24,7 +24,9 @@ export class Home extends Component {
                 Tu recherche ton tatoueur en France pour un tatouage ?
               </h2>
               <Col>
-                <img src="./home-tattoo-artist.jpg" alt="tatoueur France" />
+                <img srcset="home-tattoo-artist-500px.jpg 500w, home-tattoo-artist-350px.jpg 300w"
+                sizes ="(max-width:515px) 300px, 500px"
+                src="./home-tattoo-artist-500px.jpg," alt="tatoueur France" />
               </Col>
               <Col>
                 <ul>

@@ -20,7 +20,6 @@ const Header = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav>
-              <Nav.Link href="/home">Accueil</Nav.Link>
               <Nav.Link href="/tatoueurs">Tatoueurs</Nav.Link>
               <Nav.Link href="/styles">Styles</Nav.Link>
               <Nav.Link href="/galerie">Galerie</Nav.Link>
