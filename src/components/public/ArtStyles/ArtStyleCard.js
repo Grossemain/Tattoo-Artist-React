@@ -16,7 +16,11 @@ const ArtStyleCard = ({ artstyle }) => {
           <h2>{artstyle.name}</h2>
         </Card.Title>
         <Card.Body className="card-content">
-          <Card.Text>{artstyle.description}</Card.Text>
+          <Card.Text>
+            {artstyle.description.length > 200
+              ? `${artstyle.description.substring(0, 200)}...`
+              : artstyle.description}
+          </Card.Text>
         </Card.Body>
         <Row className="card-button">
           <Link

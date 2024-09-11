@@ -17,7 +17,11 @@ const FlashTattooCard = ({ flashtattoo }) => {
           <h2>{flashtattoo.title}</h2>
         </Card.Title>
         <Card.Body className="card-content">
-          <Card.Text>{flashtattoo.content}</Card.Text>
+          <Card.Text>
+            {flashtattoo.content.length > 200
+              ? `${flashtattoo.content.substring(0, 200)}...`
+              : flashtattoo.content}
+          </Card.Text>
         </Card.Body>
         <Row className="card-button">
           <Link

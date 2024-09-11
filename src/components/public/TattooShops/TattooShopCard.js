@@ -17,7 +17,11 @@ const TattooShopCard = ({ tattooshop }) => {
           <h2>{tattooshop.title}</h2>
         </Card.Title>
         <Card.Body className="card-content">
-          <Card.Text>{tattooshop.meta_description}</Card.Text>
+          <Card.Text>
+            {tattooshop.meta_description.length > 200
+              ? `${tattooshop.meta_description.substring(0, 200)}...`
+              : tattooshop.meta_description}
+          </Card.Text>
           <Row>
             <Col className="colonne">
               <span className="cell">{tattooshop.city}</span>

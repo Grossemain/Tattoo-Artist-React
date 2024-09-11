@@ -18,12 +18,16 @@ const ArticleCard = ({ article }) => {
           <h2>{article.title}</h2>
         </Card.Title>
         <Card.Body className="card-content">
-          <Card.Text>{article.content}</Card.Text>
+          <Card.Text>
+            {article.content.length > 200
+              ? `${article.content.substring(0, 200)}...`
+              : article.content}
+          </Card.Text>
         </Card.Body>
         <Row className="card-button">
           <Link
             className="text-light text-decoration-none"
-            to={`/articles/${article.article_id}`}
+            to={`/article/${article.article_id}`}
           >
             {article.title}
           </Link>
