@@ -30,28 +30,60 @@ import {
     const [img_profil, setImgProfil] = useState("");
     const [validationError, setValidationError] = useState({});
     const [formData, setFormData] = useState({});
+    const [ArtStylesList,setArtStylesList] = useState({});
+    const token = localStorage.getItem("token");
+
+     //On appel les ArtStyles
+  // Fetch places (artsyles) from API
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/artstyles")
+      .then((response) => {
+        setArtStyles(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the categories!", error);
+      });
+  }, []);
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setCheckedItems([...checkedItems, value]);
+      console.log(value);
+    } else {
+      setCheckedItems(checkedItems.filter((item) => item !== value));
+    }
+  };
+
 
     useEffect(() => {
-        getUser();
+      getCurrentUser();
       }, []);
       // GET - Récupère les valeurs de la fiche avec l'API
-
-      const getUser = async () => {
+console.log(localStorage.getItem("token"));
+      const getCurrentUser = async () => {
         await axios
-          .get(`http://127.0.0.1:8000/api/users/${user}`)
+          .post(`http://127.0.0.1:8000/api/currentuser`,{},{
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then((res) => {
-            setPseudoUser(res.data.pseudo_user);
-            setEmail(res.data.email);
-            setPassword(res.data.password);
-            setEmailContact(res.data.email_contact);
-            setTel(res.data.tel);
-            setTel(res.data.tel);
-            setCity(res.data.city);
-            setDepartement(res.data.departement);
-            setInstagram(res.data.instagram);
-            setDescription(res.data.description);
-            setImgProfil(res.data.img_profil);
-            console.log(res.data);
+            setPseudoUser(res.data.data.user.pseudo_user);
+            setEmail(res.data.data.user.email);
+            setPassword(res.data.data.user.password);
+            setEmailContact(res.data.data.user.email_contact);
+            setTel(res.data.data.user.tel);
+            setTel(res.data.data.user.tel);
+            setCity(res.data.data.user.city);
+            setDepartement(res.data.data.user.departement);
+            setInstagram(res.data.data.user.instagram);
+            setDescription(res.data.data.user.description);
+            setImgProfil(res.data.data.user.img_profil);
+            setArtStylesList(res.data.data.artstyles);
+            console.log(res.data.data.user.artstyles);
           })
           .catch((error) => {
             console.log(error);
@@ -110,18 +142,6 @@ import {
           console.error("There was an error fetching the categories!", error);
         });
     }, []);
-  
-
-  
-    const handleCheckboxChange = (event) => {
-      const { value, checked } = event.target;
-      if (checked) {
-        setCheckedItems([...checkedItems, value]);
-        console.log(value);
-      } else {
-        setCheckedItems(checkedItems.filter((item) => item !== value));
-      }
-    };
   
     
     //logique pour la recherche de ville + departement avec formulaire

@@ -23,7 +23,7 @@ const AdminRouter = () => {
         <Route path="users">
           <Route path="index" element={<User />} />
           <Route path="add" element={<UAdd />} />
-          <Route path="edit/:user" element={<UEdit />} />
+          <Route path="edit/" element={<UEdit />} />
         </Route>
         <Route path="styles">
           <Route path="index" element={<Artstyles />} />

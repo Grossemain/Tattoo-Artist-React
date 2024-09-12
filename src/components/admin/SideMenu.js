@@ -19,7 +19,7 @@ const SideMenu = () => {
 
             <span>COMPTE</span>
             <Nav.Link href="/admin/users/index">Comptes</Nav.Link>
-            <Nav.Link href="/admin/users/edit/:user">Modifier son compte</Nav.Link>
+            <Nav.Link href="/admin/users/edit/">Modifier son compte</Nav.Link>
             <Nav.Link href="/admin/users/add">Creer un compte</Nav.Link>
             <Nav.Link href="#">Deconnection</Nav.Link>
             <span>ARTSTYLES</span>

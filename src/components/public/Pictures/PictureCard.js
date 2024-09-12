@@ -15,6 +15,9 @@ const PictureCard = ({ picture }) => {
         <Card.Title className="card-title">
           <h2>{picture.picture_name}</h2>
         </Card.Title>
+        <Card.Title className="card-title">
+          <h3>{picture.user.pseudo_user}</h3>
+        </Card.Title>
         <Row className="card-button">
           <Link
             className="text-light text-decoration-none"

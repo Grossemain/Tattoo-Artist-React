@@ -16,6 +16,9 @@ const FlashTattooCard = ({ flashtattoo }) => {
         <Card.Title className="card-title">
           <h2>{flashtattoo.title}</h2>
         </Card.Title>
+        <Card.Title className="card-title">
+          <h3>{flashtattoo.user.pseudo_user}</h3>
+        </Card.Title>
         <Card.Body className="card-content">
           <Card.Text>
             {flashtattoo.content.length > 200

@@ -5,7 +5,7 @@ import SearchForm from "../../components/public/SearchBar/SearchForm";
 export class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="Content">
         <Container className="HomeHeader">
           <Row>
             <div className="mt-4">
@@ -42,7 +42,7 @@ export class Home extends Component {
                     <span>Tattoo shop Français</span>
                   </li>
                   <p>
-                    Tu recherche un tattoo shop pour te renseigne sur ton projet
+                    Tu recherche un tattoo shop pour te renseigner sur ton projet
                     de tattoo? Notre liste de studio de tatouage Français
                     t'aiguillera vers ton futur tatoueur
                   </p>
@@ -139,7 +139,7 @@ export class Home extends Component {
 
                   <p>
                     Pour choisir ton tatoueur, assurez-toi qu’il tatou dans les
-                    bonnes conditions d’hygiène et que le studio de tatouage est
+                    bonnes conditions d’hygiène et que le salon de tatouage est
                     bien accessible. N’hésite pas à demander à visiter le shop
                     et la pièce dédiée aux séances de tatouage pour te rassurer.
                   </p>

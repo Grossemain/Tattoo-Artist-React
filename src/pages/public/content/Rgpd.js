@@ -3,7 +3,7 @@ import {Container} from "react-bootstrap";
 
 const Rgpd = () => {
     return (
-        <div className='Content'>
+        <div className="Content">
             <Container>
             <h1>TRAITEMENT DES DONNÉES PERSONNELLES</h1>
 

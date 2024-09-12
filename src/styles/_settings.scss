@@ -56,9 +56,12 @@ $liSpanFontSize: 24px;
 $sansPucesUlListStyle:none;
 $sansPucesSpanFontSize:24px;
 
-/*BODY*/
-$bodyDisplay:block;
+/*VARIABLE BODY - LAYOUT*/
+$bodyDisplay:flex;
+$bodyFlexDirection:column;
 $bodyMargin: 0px;
+$bodyMinHeight: 100vh;
+
 
 /*VARIABLE BOUTON*/
 $boutonBg:$color-1;
@@ -85,14 +88,15 @@ $boutonAFontsize:20px;
   box-sizing: border-box;
 }
 
-body {
+body,.Layout {
+  display: $bodyDisplay;
+  flex-direction: $bodyFlexDirection;
+  min-height: $bodyMinHeight;
   background: $white;
   font-family: $fontFamily;
   font-weight: $fontWeight;
   font-size:18px;
-  display: $bodyDisplay;
   color: $color-3;
-  // @include verticalCenter;
 }
 
 h1{

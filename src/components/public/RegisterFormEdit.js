@@ -32,13 +32,35 @@ import {
     const [formData, setFormData] = useState({});
 
     useEffect(() => {
-        getUser();
+        getCurrentUser();
       }, []);
       // GET - Récupère les valeurs de la fiche avec l'API
 
-      const getUser = async () => {
+      // const getUser = async () => {
+      //   await axios
+      //     .get(`http://127.0.0.1:8000/api/users/${user}`)
+      //     .then((res) => {
+      //       setPseudoUser(res.data.pseudo_user);
+      //       setEmail(res.data.email);
+      //       setPassword(res.data.password);
+      //       setEmailContact(res.data.email_contact);
+      //       setTel(res.data.tel);
+      //       setTel(res.data.tel);
+      //       setCity(res.data.city);
+      //       setDepartement(res.data.departement);
+      //       setInstagram(res.data.instagram);
+      //       setDescription(res.data.description);
+      //       setImgProfil(res.data.img_profil);
+      //       console.log(res.data);
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+      // };
+
+      const getCurrentUser = async () => {
         await axios
-          .get(`http://127.0.0.1:8000/api/users/${user}`)
+          .get(`http://127.0.0.1:8000/api/currentuser`)
           .then((res) => {
             setPseudoUser(res.data.pseudo_user);
             setEmail(res.data.email);
@@ -57,6 +79,7 @@ import {
             console.log(error);
           });
       };
+
 
       const changeHandler = (event) => {
         setImgProfil(event.target.files[0]);
