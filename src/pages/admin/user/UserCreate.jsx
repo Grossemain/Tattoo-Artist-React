@@ -369,7 +369,7 @@ import {
               </Form.Group>
             </Container>
             <div className="d-grid gap-2 mt-5">
-              <Button type="submit" variant="primary" size="lg">
+            <Button type="submit" className="bouton">
                 Valide ta fiche
               </Button>
             </div>
