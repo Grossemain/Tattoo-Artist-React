@@ -6,6 +6,7 @@ import {
   Col,
   InputGroup,
   FloatingLabel,
+  Alert,
 } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
@@ -29,6 +30,7 @@ const RegisterForm = () => {
   const [img_profil, setImgProfil] = useState("");
   const [validationError, setValidationError] = useState({});
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState(null);
   const handleFormData = (data) => {
     setFormData(data);
     console.log(formData);
@@ -61,10 +63,37 @@ const RegisterForm = () => {
     }
   };
 
+  const validatePassword = (password) => {
+    const minLength = /.{8,}/;
+    const hasUpperCase = /[A-Z]/;
+    const hasNumber = /\d/;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+    return (
+      minLength.test(password) &&
+      hasUpperCase.test(password) &&
+      hasNumber.test(password) &&
+      hasSpecialChar.test(password)
+    );
+  };
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   //On converti en formData toutes les données
   // Gestion de la soumission du formulaire
   const addProfil = async (e) => {
     e.preventDefault();
+    if (!validateEmail(email)) {
+      setError("L'adresse email n'est pas valide.");
+      return;
+    }
+    if (!validatePassword(password)) {
+      setError("Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial.");
+      return;
+    }
+    setError(null);
     const formData = new FormData();
     console.log(checkedItems);
     formData.append("pseudo_user", pseudo_user);
@@ -146,7 +175,7 @@ const RegisterForm = () => {
           tatoueur
         </p>
       </Container>
-
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form onSubmit={addProfil}>
         <Container>
           <h2 className="h2-titleForm">Création de ton compte</h2>
@@ -369,7 +398,7 @@ const RegisterForm = () => {
             </Form.Group>
           </Container>
           <div className="d-grid gap-2 mt-5">
-          <Button type="submit" className="bouton">
+            <Button type="submit" className="bouton">
               Valide ta fiche
             </Button>
           </div>
