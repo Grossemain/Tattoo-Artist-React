@@ -13,8 +13,12 @@ import {Articles, AAdd, AEdit} from "../admin/Article"
 // import { User, UEdit} from '../admin/user'
 
 import Error from "../../_utils/Error";
+import { accountService } from "../../_services";
 
 const AdminRouter = () => {
+  const userRole = accountService.getRole(); // Fonction pour obtenir le rôle de l'utilisateur
+
+  if (userRole==2) {
   return (
     <Routes>
       <Route element={<ALayout />}>
@@ -55,6 +59,9 @@ const AdminRouter = () => {
       </Route>
     </Routes>
   );
+}else{
+  return  <h1>Vous n'avez pas les droits d'accès à cette page</h1>; // Afficher un message d'erreur si l'utilisateur n'est pas administrateur
+}
 };
 
 export default AdminRouter;

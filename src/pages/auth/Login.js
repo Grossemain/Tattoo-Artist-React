@@ -25,7 +25,10 @@ const Login = () => {
       .then((res) => {
         // Sauvegarde du token et envoi vers admin
         accountService.saveToken(res.data.data.access_token.token);
-        navigate("/admin", { replace: true });
+        if(accountService.getRole()==2){
+        navigate("/admin", { replace: true });}
+        else if(accountService.getRole()==1){
+        navigate("/mon-compte", { replace: true });}
       })
       .catch((error) => {
         console.log(error);
