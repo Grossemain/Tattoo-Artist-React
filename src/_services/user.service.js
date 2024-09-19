@@ -26,7 +26,6 @@ let addUser = (formData) => {
   return Axios.postForm("/api/register", formData);
 };
 
-
 /**
  * Mise à jour d'un utilisateur
  * @param {number} user
@@ -45,6 +44,25 @@ let deleteUser = (uid) => {
   return Axios.delete("/api/users/" + uid);
 };
 
+/**
+ * Récupération de l'utilisateur connecté
+ * @param {number}
+ * @returns {Promise}
+ */
+const token = localStorage.getItem("token");
+
+let getCurrentUser = () => {
+  return Axios.post(
+    "/api/currentuser",
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
 // Déclaration des services pour import
 export const userService = {
   getAllUsers,
@@ -52,4 +70,5 @@ export const userService = {
   addUser,
   updateUser,
   deleteUser,
+  getCurrentUser,
 };

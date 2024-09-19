@@ -4,25 +4,37 @@ import Button from "react-bootstrap/Button";
 
 import { Link } from 'react-router-dom'
 import { flashtattooService } from '../../../_services/flashtattoo.service';
+import { userService } from '../../../_services/user.service';
 
 const FlashTattoos = () => {
     const [FlashTattoos, setFlashTattoos] = useState([])
     const flag = useRef(false)
+    const [userId, setUserId] = useState();
+
+    //on recupere l'utilisateur connecté
+  useEffect(() => {
+    userService
+    .getCurrentUser()
+    .then((res) => {
+        setUserId(res.data.user_id);
+        console.log("currentUser: " + res.data.user_id);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
+
 
     // Récupération de la liste des utilisateurs à l'affichage
     useEffect(() => {
-        if(flag.current === false){
-            flashtattooService.getAllFlashTattoos()
+            flashtattooService.getUserFlashTattoos(userId)
                 .then(res => {
                     // Liste dans le state
                     setFlashTattoos(res.data)
                 })
                 .catch(err => console.log(err))
-        }
-
-        return () => flag.current = true
-        
-    }, [])
+    }, [userId]);
 
     // Gestion du bouton de suppression d'un utilisateur
     const delFlashTattoo = (FlashTattooId) => {

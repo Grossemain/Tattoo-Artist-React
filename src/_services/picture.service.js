@@ -9,6 +9,15 @@ let getAllPictures = () => {
 };
 
 /**
+ * Récupératoin de la liste des images
+ * @param {number} userId
+ * @returns {Promise}
+ */
+let getUserPictures = (userId) => {
+  return Axios.get("/api/pictureByUser/" + userId);
+};
+
+/**
  * Récupération d'une image
  * @param {number} pid
  * @returns {Promise}
@@ -51,4 +60,5 @@ getAllPictures,
   addPicture,
   updatePicture,
   deletePicture,
+  getUserPictures,
 };

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { accountService } from "../../_services/";
+import { accountService} from "../../_services/";
 import PictureList from "../../components/public/Pictures/PictureList";
 import FlashTattooList from "../../components/public/FlashTattoos/FlashTattooList";
 
 const Account = () => {
-  console.log(accountService.getRole());
+
+
   return (
     <div className="Account">
       Coucou le compte utilisateur

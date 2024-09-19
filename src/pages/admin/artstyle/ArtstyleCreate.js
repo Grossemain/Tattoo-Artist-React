@@ -12,19 +12,19 @@ import axios from "axios";
 
 const ArtStyleCreate = () => {
   const navigate = useNavigate();
-  const [ArstyleName, setArtstyleName] = useState("");
-  const [ArstyleDescription, setArtstyleDescription] = useState("");
+  const [ArtstyleName, setArtstyleName] = useState("");
+  const [ArtstyleDescription, setArtstyleDescription] = useState("");
   const [ArtstyleImage, setArtstyleImage] = useState("");
   const [validationError, setValidationError] = useState({});
   const changeHandler = (event) => {
     setArtstyleImage(event.target.files[0]);
   };
-  //Fonction d'ajout de club
+  //Fonction d'ajout de artstyle
   const ArtStyleAdd = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("name", ArstyleName);
-    formData.append("description", ArstyleDescription);
+    formData.append("name", ArtstyleName);
+    formData.append("description", ArtstyleDescription);
     formData.append("img_style", ArtstyleImage);
 
     await axios

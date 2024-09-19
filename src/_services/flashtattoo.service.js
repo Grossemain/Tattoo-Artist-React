@@ -9,6 +9,15 @@ let getAllFlashTattoos = () => {
 };
 
 /**
+ * Récupératoin de la liste des flash par utilisateur
+ * @param {number} userId
+ * @returns {Promise}
+ */
+let getUserFlashTattoos = (userId) => {
+  return Axios.get("/api/flashtattooByUser/" + userId);
+};
+
+/**
  * Récupération d'une image
  * @param {number} ftid
  * @returns {Promise}
@@ -51,4 +60,5 @@ getAllFlashTattoos,
   addFlashTattoo,
   updateFlashTattoo,
   deleteFlashTattoo,
+  getUserFlashTattoos,
 };
