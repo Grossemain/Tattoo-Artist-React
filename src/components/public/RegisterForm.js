@@ -26,6 +26,7 @@ const RegisterForm = () => {
   const [departement, setDepartement] = useState([]);
   const [instagram, setInstagram] = useState([]);
   const [description, setDescription] = useState([]);
+  const [coordonnes, setCoordonnes] = useState([]);
   const [artstyles, setArtStyles] = useState([]);
   const [img_profil, setImgProfil] = useState("");
   const [validationError, setValidationError] = useState({});
@@ -90,7 +91,9 @@ const RegisterForm = () => {
       return;
     }
     if (!validatePassword(password)) {
-      setError("Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial.");
+      setError(
+        "Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un caractère spécial."
+      );
       return;
     }
     setError(null);
@@ -104,6 +107,7 @@ const RegisterForm = () => {
     formData.append("city", city);
     formData.append("departement", departement);
     formData.append("instagram", instagram);
+    formData.append("coordonnes", coordonnes);
     formData.append("description", description);
     formData.append("img_profil", img_profil);
     checkedItems.forEach((element, index) => {
@@ -267,7 +271,7 @@ const RegisterForm = () => {
               <Container>
                 <Form>
                   <Row>
-                  <Form.Label className="labelForm">Localisation</Form.Label>
+                    <Form.Label className="labelForm">Localisation</Form.Label>
                     <Col>
                       <InputGroup>
                         <Form.Control
@@ -340,9 +344,22 @@ const RegisterForm = () => {
                       />
                     </Form.Group>
                   </Col>
-                  <Col></Col>
-                  <p>Ces coordonnées seront affichées sur ton profil pour que les visiteurs puissent te contacter directement.</p>
-
+                  <Col>
+                  <Form.Label className="labelForm">Adresse</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        name="coordonnes"
+                        placeholder="Adresse du shop"
+                        style={{ height: "50px" }}
+                        onChange={(event) => {
+                          setCoordonnes(event.target.value);
+                        }}
+                      />
+                  </Col>
+                  <p>
+                    Ces coordonnées seront affichées sur ton profil pour que les
+                    visiteurs puissent te contacter directement.
+                  </p>
                 </Row>
               </Container>
             </div>

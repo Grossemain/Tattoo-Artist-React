@@ -26,6 +26,7 @@ const UserEdit = () => {
   const [departement, setDepartement] = useState([]);
   const [instagram, setInstagram] = useState([]);
   const [description, setDescription] = useState([]);
+  const [coordonnes, setCoordonnes] = useState([]);
   const [artstyles, setArtStyles] = useState([]);
   const [img_profil, setImgProfil] = useState("");
   const [validationError, setValidationError] = useState({});
@@ -81,6 +82,7 @@ const handleCheckboxChange = (event) => {
           setDepartement(res.data.departement);
           setInstagram(res.data.instagram);
           setDescription(res.data.description);
+          setCoordonnes(res.data.coordonnes);
           setImgProfil(res.data.img_profil);
           setArtStylesList(res.data.artstyles);
           
@@ -119,6 +121,7 @@ const updateUser = async (e) => {
   formData.append("city", city);
   formData.append("departement", departement);
   formData.append("instagram", instagram);
+  formData.append("coordonnes", coordonnes);
   formData.append("description", description);
   if (img_profil !== null) {
       formData.append("img_profil", img_profil);
@@ -378,7 +381,19 @@ console.log(artStylesList);
                       />
                     </Form.Group>
                   </Col>
-                  <Col></Col>
+                  <Col>
+                  <Form.Label className="labelForm">Adresse</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        name="coordonnes"
+                        placeholder="Adresse du shop"
+                        value={coordonnes}
+                        style={{ height: "50px" }}
+                        onChange={(event) => {
+                          setCoordonnes(event.target.value);
+                        }}
+                      />
+                  </Col>
                   <p>Ces coordonnées seront affichées sur ton profil pour que les visiteurs puissent te contacter directement.</p>
 
                 </Row>
