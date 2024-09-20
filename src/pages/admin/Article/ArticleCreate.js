@@ -29,6 +29,8 @@ const ArticleCreate = () => {
   const changeHandler = (event) => {
     setArticleImage(event.target.files[0]);
   };
+
+  
   //Fonction d'ajout de club
   const ArticleAdd = async (e) => {
     e.preventDefault();
@@ -43,7 +45,7 @@ const ArticleCreate = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then(navigate("/admin"))
+      .then(navigate("/home"))
       .catch(({ response }) => {
         if (response.status === 422) {
           setValidationError(response.data.errors);

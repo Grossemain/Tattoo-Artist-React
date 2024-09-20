@@ -9,6 +9,15 @@ let getAllTattooShops = () => {
 };
 
 /**
+ * Récupératoin de la liste des images
+ * @param {number} userId
+ * @returns {Promise}
+ */
+let getUserTattooshops = (userId) => {
+  return Axios.get("/api/tattooshopByUser/" + userId);
+};
+
+/**
  * Récupération d'une image
  * @param {number} tsid
  * @returns {Promise}
@@ -51,4 +60,5 @@ getAllTattooShops,
   addTattooShop,
   updateTattooShop,
   deleteTattooShop,
+  getUserTattooshops,
 };

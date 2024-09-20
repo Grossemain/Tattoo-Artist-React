@@ -13,10 +13,10 @@ const Account = () => {
       <Container>
         <Row>
           <Col>
-            <PictureList />
+            {/* <PictureList /> */}
           </Col>
           <Col>
-            <FlashTattooList />
+            {/* <FlashTattooList /> */}
           </Col>
         </Row>
       </Container>
