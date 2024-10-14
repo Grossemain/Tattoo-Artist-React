@@ -49,7 +49,7 @@ const SearchForm = () => {
     setHasSearched(true);
 
     // Renseigner l'url de l'api
-    const apiUrl = `http://127.0.0.1:8000/api/users/search?search=${searchQuery}`;
+    const apiUrl = `http://127.0.0.1:8000/api/users/searchByUsersAndArtstyles?search=${searchQuery}`;
     console.log(results);
     try {
       const response = await fetch(apiUrl, {
