@@ -8,6 +8,11 @@ const PicturesList = () => {
 
     return (
         <div>
+            <div className="mt-4">
+        <h1>
+          Galerie de <span> Tatouages </span>
+        </h1>
+      </div>
             <SearchForm/>
             <PictureList/>
         </div>

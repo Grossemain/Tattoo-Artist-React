@@ -19,6 +19,7 @@ const UserEdit = () => {
   const [pseudo_user, setPseudoUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [checkedItems, setCheckedItems] = useState([]);
   const [email_contact, setEmailContact] = useState([]);
   const [tel, setTel] = useState([]);
@@ -248,18 +249,23 @@ console.log(artStylesList);
                 </Form.Group>
               </Col>
               <Col>
-                <Form.Group className="mb-3">
-                  <Form.Label className="labelForm">Mot de passe</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    placeholder="Ton mot de passe"
-                    value={password}
-                    onChange={(event) => {
-                      setPassword(event.target.value);
-                    }}
-                  />
-                </Form.Group>
+              <Form.Group className="mb-3">
+      <Form.Label className="labelForm">Mot de passe</Form.Label>
+      <InputGroup>
+        <Form.Control
+          type={showPassword ? "text" : "password"}
+          name="password"
+          placeholder="Ton mot de passe"
+          value={password}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+        <Button variant="secondary" onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? "Masquer" : "Voir"}
+        </Button>
+      </InputGroup>
+    </Form.Group>
               </Col>
             </Row>
           </Container>

@@ -8,6 +8,11 @@ const FlashList = () => {
 
     return (
         <div>
+            <div className="mt-4">
+        <h1>
+          Liste de <span> salons de tatouage </span>
+        </h1>
+      </div>
             <SearchForm/>
             <TattooShopList/>
         </div>

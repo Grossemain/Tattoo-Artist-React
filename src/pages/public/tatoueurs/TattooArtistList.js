@@ -8,6 +8,11 @@ const TattooArtistList = () => {
 
     return (
         <div>
+            <div className="mt-4">
+        <h1>
+          Liste de tatoueurs <span> Français </span>
+        </h1>
+      </div>
             <SearchForm/>
             <UserList/>
         </div>
