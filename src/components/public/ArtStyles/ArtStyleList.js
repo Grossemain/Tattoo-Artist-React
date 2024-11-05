@@ -13,7 +13,7 @@ const ArtStyleList = () => {
   const [ArtStyles, setArtStyles] = useState([]);
 
   const displayArtStyles = async () => {
-    await axios.get("http://127.0.0.1:8000/api/artstyles").then((res) => {
+    await axios.get("https://api.le-tatouage.fr/api/artstyles").then((res) => {
       setArtStyles(res.data);
     });
   };

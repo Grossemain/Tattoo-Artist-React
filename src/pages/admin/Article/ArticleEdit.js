@@ -35,7 +35,7 @@ const ArticleEdit = () => {
   const getArticle = async () => {
     console.log('article:', article);
     await axios
-      .get(`http://127.0.0.1:8000/api/articles/${article}`)
+      .get(`https://api.le-tatouage.fr/api/articles/${article}`)
       .then((res) => {
         setArticleTitle(res.data.title);
         setArticleContent(res.data.content);
@@ -62,7 +62,7 @@ const ArticleEdit = () => {
       formData.append("img", ArticleImage);
     }
     await axios
-      .post(`http://127.0.0.1:8000/api/articles/${article}`, formData, {
+      .post(`https://api.le-tatouage.fr/api/articles/${article}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -121,7 +121,7 @@ const ArticleEdit = () => {
                   onChange={changeHandler}
                 />
                 <img
-                src={`http://127.0.0.1:8000/storage/uploads/${ArticleImage}`}
+                src={`https://api.le-tatouage.fr/storage/uploads/${ArticleImage}`}
                 className="w-100"
                 />
               </Form.Group>

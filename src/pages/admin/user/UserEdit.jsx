@@ -40,7 +40,7 @@ const UserEdit = () => {
 // Fetch places (artsyles) from API
 useEffect(() => {
   axios
-    .get("http://127.0.0.1:8000/api/artstyles")
+    .get("https://api.le-tatouage.fr/api/artstyles")
     .then((response) => {
       setArtStyles(response.data);
     })
@@ -66,7 +66,7 @@ const handleCheckboxChange = (event) => {
 
     const getCurrentUser = async () => {
       await axios
-        .post(`http://127.0.0.1:8000/api/currentuser`,{},{
+        .post(`https://api.le-tatouage.fr/api/currentuser`,{},{
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -131,7 +131,7 @@ const updateUser = async (e) => {
     formData.append(`artstyle_id[]`, element);
   });
   await axios
-      .post(`http://127.0.0.1:8000/api/users/${userId}`, formData)
+      .post(`https://api.le-tatouage.fr/api/users/${userId}`, formData)
       .then(navigate("../merci"))
       .catch(({ response }) => {
         if (response.status === 422) {
@@ -145,7 +145,7 @@ const updateUser = async (e) => {
   // Fetch places (artsyles) from API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/artstyles")
+      .get("https://api.le-tatouage.fr/api/artstyles")
       .then((response) => {
         setArtStyles(response.data);
       })

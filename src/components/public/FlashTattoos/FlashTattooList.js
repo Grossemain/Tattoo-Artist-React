@@ -11,7 +11,7 @@ const FlashTattooList = () => {
   const [FlashTattoos, setFlashTattoos] = useState([]);
 
   const displayFlashTattoos = async () => {
-    await axios.get("http://127.0.0.1:8000/api/flashtattoos")
+    await axios.get("https://api.le-tatouage.fr/api/flashtattoos")
     .then((res) => {
       setFlashTattoos(res.data);
       console.log(res.data);

@@ -28,7 +28,7 @@ const ArtStyleCreate = () => {
     formData.append("img_style", ArtstyleImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/artstyles`, formData)
+      .post(`https://api.le-tatouage.fr/api/artstyles`, formData)
       .then(navigate("/admin"))
       .catch(({ response }) => {
         if (response.status === 422) {

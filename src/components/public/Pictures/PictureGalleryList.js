@@ -11,7 +11,7 @@ const PictureGalleryList = () => {
   const [Pictures, setPictures] = useState([]);
 
   const displayPictures = async () => {
-    await axios.get("http://127.0.0.1:8000/api/pictures").then((res) => {
+    await axios.get("https://api.le-tatouage.fr/api/pictures").then((res) => {
       setPictures(res.data);
       console.log(res.data.user);
     });

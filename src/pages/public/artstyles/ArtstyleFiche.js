@@ -26,7 +26,7 @@ const ArtStyleFiche = () => {
           </div>
           <Col sm={4}>
             <img
-              src={`http://127.0.0.1:8000/storage/uploads/${artstyle.img_style}`}
+              src={`https://api.le-tatouage.fr/storage/uploads/${artstyle.img_style}`}
               alt={`${artstyle.name}`}
             />
           </Col>

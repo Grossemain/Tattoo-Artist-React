@@ -28,7 +28,7 @@ const ArticleFiche = () => {
           </div>
           <Col sm={4}>
             <img
-              src={`http://127.0.0.1:8000/storage/uploads/${article.img}`}
+              src={`https://api.le-tatouage.fr/storage/uploads/${article.img}`}
               alt={`${article.title}`}
             />
             <Row>

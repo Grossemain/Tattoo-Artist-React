@@ -11,7 +11,7 @@ const TattooShopList = () => {
   const [TattooShops, setTattooShops] = useState([]);
 
   const displayTattooShop = async () => {
-    await axios.get("http://127.0.0.1:8000/api/tattooshops")
+    await axios.get("https://api.le-tatouage.fr/api/tattooshops")
     .then((res) => {
       setTattooShops(res.data);
       console.log(res.data);

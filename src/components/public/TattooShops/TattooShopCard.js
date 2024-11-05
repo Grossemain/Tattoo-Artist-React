@@ -10,7 +10,7 @@ const TattooShopCard = ({ tattooshop }) => {
         <Card.Img
           className="card-image"
           variant="top"
-          src={`http://127.0.0.1:8000/storage/uploads/${tattooshop.img_tattooshop}`}
+          src={`https://api.le-tatouage.fr/storage/uploads/${tattooshop.img_tattooshop}`}
           alt={`${tattooshop.name}`}
         />
         <Card.Title className="card-title">

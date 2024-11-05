@@ -13,7 +13,7 @@ const TattooArtistGalleryCard = ({ user }) => {
           <Card.Img
             className="card-image"
             variant="top"
-            src={`http://127.0.0.1:8000/storage/uploads/${user.img_profil}`}
+            src={`https://api.le-tatouage.fr/storage/uploads/${user.img_profil}`}
             alt={`${user.pseudo_user}-${user.city}`}
           />
           <Row className="card-button">

@@ -13,7 +13,7 @@ const TattooArtistGalleryList = () => {
   const [Users, setUsers] = useState([]);
 
   const displayUsers = async () => {
-    await axios.get("http://127.0.0.1:8000/api/users").then((res) => {
+    await axios.get("https://api.le-tatouage.fr/api/users").then((res) => {
       setUsers(res.data);
     });
   };

@@ -39,7 +39,7 @@ const FlashTattooCreate = () => {
     formData.append("img_flashtattoo", FlashTattooImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/flashtattoos`, formData, {
+      .post(`https://api.le-tatouage.fr/api/flashtattoos`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

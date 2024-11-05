@@ -27,7 +27,7 @@ const FlashFiche = () => {
           </div>
           <Col sm={4}>
             <img
-              src={`http://127.0.0.1:8000/storage/uploads/${flashTattoo.img_flashtattoo}`}
+              src={`https://api.le-tatouage.fr/storage/uploads/${flashTattoo.img_flashtattoo}`}
               alt={`${flashTattoo.title}`}
             />
           </Col>

@@ -40,7 +40,7 @@ const ArticleCreate = () => {
     formData.append("img", ArticleImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/articles`, formData, {
+      .post(`https://api.le-tatouage.fr/api/articles`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

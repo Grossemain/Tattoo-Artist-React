@@ -13,7 +13,7 @@ const ArticleList = () => {
   const [Articles, setArticles] = useState([]);
 
   const displayArticles = async () => {
-    await axios.get("http://127.0.0.1:8000/api/articles").then((res) => {
+    await axios.get("https://api.le-tatouage.fr/api/articles").then((res) => {
       setArticles(res.data);
     });
   };

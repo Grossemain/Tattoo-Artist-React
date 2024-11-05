@@ -9,7 +9,7 @@ const ArtStyleCard = ({ artstyle }) => {
         <Card.Img
           className="card-image"
           variant="top"
-          src={`http://127.0.0.1:8000/storage/uploads/${artstyle.img_style}`}
+          src={`https://api.le-tatouage.fr/storage/uploads/${artstyle.img_style}`}
           alt={`${artstyle.name}`}
         />
         <Card.Title className="card-title">

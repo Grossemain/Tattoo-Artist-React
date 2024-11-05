@@ -33,7 +33,7 @@ const PictureCreate = () => {
     formData.append("image", PictureImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/pictures`, formData,
+      .post(`https://api.le-tatouage.fr/api/pictures`, formData,
         {
           headers: {
           Authorization :`Bearer ${token}`

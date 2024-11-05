@@ -27,7 +27,7 @@ const ArtistProfil = () => {
           </div>
           <Col sm={4}>
             <img
-              src={`http://127.0.0.1:8000/storage/uploads/${artist.img_profil}`}
+              src={`https://api.le-tatouage.fr/storage/uploads/${artist.img_profil}`}
               alt={`${artist.pseudo_user}-${artist.city}`}
             />
             <Row>

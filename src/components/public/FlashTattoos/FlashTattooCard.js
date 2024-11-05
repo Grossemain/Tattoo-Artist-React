@@ -10,7 +10,7 @@ const FlashTattooCard = ({ flashtattoo }) => {
         <Card.Img
           className="card-image"
           variant="top"
-          src={`http://127.0.0.1:8000/storage/uploads/${flashtattoo.img_flashtattoo}`}
+          src={`https://api.le-tatouage.fr/storage/uploads/${flashtattoo.img_flashtattoo}`}
           alt={`${flashtattoo.title}`}
         />
         <Card.Title className="card-title">

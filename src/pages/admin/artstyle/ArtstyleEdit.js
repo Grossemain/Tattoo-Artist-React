@@ -25,7 +25,7 @@ const ArtstyleEdit = () => {
 
   const getArtstyle = async () => {
     await axios
-      .get(`http://127.0.0.1:8000/api/artstyles/${artstyle}`)
+      .get(`https://api.le-tatouage.fr/api/artstyles/${artstyle}`)
       .then((res) => {
         setArtstyleName(res.data.name);
         setArtstyleDescription(res.data.description);
@@ -50,7 +50,7 @@ const ArtstyleEdit = () => {
       formData.append("img_style", ArtstyleImage);
     }
     await axios
-      .post(`http://127.0.0.1:8000/api/artstyles/${artstyle}`, formData)
+      .post(`https://api.le-tatouage.fr/api/artstyles/${artstyle}`, formData)
       .then(navigate("/admin/"))
       .catch(({ response }) => {
         if (response.status === 422) {
@@ -102,7 +102,7 @@ const ArtstyleEdit = () => {
                   name="img_style"
                   onChange={changeHandler}
                 /><img
-                src={`http://127.0.0.1:8000/storage/uploads/${artstyle.img_style}`}
+                src={`https://api.le-tatouage.fr/storage/uploads/${artstyle.img_style}`}
               />
               </Form.Group>
             </Form.Group>

@@ -44,7 +44,7 @@ const TattooShopCreate = () => {
     formData.append("img_tattooshop", TattooShopImage);
 
     await axios
-      .post(`http://127.0.0.1:8000/api/tattooshops`, formData, {
+      .post(`https://api.le-tatouage.fr/api/tattooshops`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

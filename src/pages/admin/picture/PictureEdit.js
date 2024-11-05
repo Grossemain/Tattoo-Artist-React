@@ -27,7 +27,7 @@ const PictureEdit = () => {
 
   const getPicture = async () => {
     await axios
-      .get(`http://127.0.0.1:8000/api/pictures/${picture}`)
+      .get(`https://api.le-tatouage.fr/api/pictures/${picture}`)
       .then((res) => {
         setPictureName(res.data.picture_name);
         setPictureAlt(res.data.alt);
@@ -54,7 +54,7 @@ const PictureEdit = () => {
       formData.append("image", PictureImage);
     }
     await axios
-      .post(`http://127.0.0.1:8000/api/pictures/${picture}`, formData,
+      .post(`https://api.le-tatouage.fr/api/pictures/${picture}`, formData,
         {
           headers: {
           Authorization :`Bearer ${token}`
@@ -111,7 +111,7 @@ const PictureEdit = () => {
                   onChange={changeHandler}
                 />
                 <img
-                src={`http://127.0.0.1:8000/storage/uploads/${PictureImage}`}
+                src={`https://api.le-tatouage.fr/storage/uploads/${PictureImage}`}
                 className="w-100"
                 />
               </Form.Group>

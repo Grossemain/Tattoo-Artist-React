@@ -42,7 +42,7 @@ const RegisterForm = () => {
   // Fetch places (artsyles) from API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/artstyles")
+      .get("https://api.le-tatouage.fr/api/artstyles")
       .then((response) => {
         setArtStyles(response.data);
       })
@@ -116,7 +116,7 @@ const RegisterForm = () => {
     });
 
     await axios
-      .post(`http://127.0.0.1:8000/api/register`, formData)
+      .post(`https://api.le-tatouage.fr/api/register`, formData)
       .then(navigate("../merci"))
       .catch(({ response }) => {
         if (response.status === 422) {

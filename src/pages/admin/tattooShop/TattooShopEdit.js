@@ -38,7 +38,7 @@ const TattooShopEdit = () => {
   const getTattooShop = async () => {
     console.log('tattooShop:',tattooShop);
     await axios
-      .get(`http://127.0.0.1:8000/api/tattooshops/${tattooShop}`)
+      .get(`https://api.le-tatouage.fr/api/tattooshops/${tattooShop}`)
       .then((res) => {
         setTattooShopName(res.data.name);
         setTattooShopAdresse(res.data.adresse);
@@ -113,7 +113,7 @@ const TattooShopEdit = () => {
       formData.append("img_tattooshop", TattooShopImage);
     }
     await axios
-      .post(`http://127.0.0.1:8000/api/tattooshops/${tattooShop}`, formData, {
+      .post(`https://api.le-tatouage.fr/api/tattooshops/${tattooShop}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -254,7 +254,7 @@ const TattooShopEdit = () => {
                   onChange={changeHandler}
                 />
                 <img
-                  src={`http://127.0.0.1:8000/storage/uploads/${TattooShopImage}`}
+                  src={`https://api.le-tatouage.fr/storage/uploads/${TattooShopImage}`}
                   className="w-100"
                 />
               </Form.Group>

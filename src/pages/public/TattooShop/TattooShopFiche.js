@@ -28,7 +28,7 @@ const TattooShopFiche = () => {
           </div>
           <Col sm={4}>
             <img
-              src={`http://127.0.0.1:8000/storage/uploads/${tattooShop.img_tattooshop}`}
+              src={`https://api.le-tatouage.fr/storage/uploads/${tattooShop.img_tattooshop}`}
               alt={`${tattooShop.name}-${tattooShop.city}`}
             />
             <Row>

@@ -13,7 +13,7 @@ const PictureGalleryCard = ({ picture }) => {
           <Card.Img
             className="card-image"
             variant="top"
-            src={`http://127.0.0.1:8000/storage/uploads/${picture.image}`}
+            src={`https://api.le-tatouage.fr/storage/uploads/${picture.image}`}
             alt={`${picture.alt}`}
           />
         </Link>

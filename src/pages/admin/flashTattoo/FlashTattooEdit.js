@@ -31,7 +31,7 @@ const FlashTattooEdit = () => {
   const getFlashTattoo = async () => {
     console.log('flashTattoo:',flashTattoo)
     await axios
-      .get(`http://127.0.0.1:8000/api/flashtattoos/${flashTattoo}`)
+      .get(`https://api.le-tatouage.fr/api/flashtattoos/${flashTattoo}`)
       .then((res) => {
         setFlashTattooTitle(res.data.title);
         setFlashTattooH1(res.data.h1_title);
@@ -64,7 +64,7 @@ const FlashTattooEdit = () => {
       formData.append("img_flashtattoo", FlashTattooImage);
     }
     await axios
-      .post(`http://127.0.0.1:8000/api/flashtattoos/${flashTattoo}`, formData,
+      .post(`https://api.le-tatouage.fr/api/flashtattoos/${flashTattoo}`, formData,
         {
           headers: {
           Authorization :`Bearer ${token}`
@@ -150,7 +150,7 @@ const FlashTattooEdit = () => {
                   onChange={changeHandler}
                 />
                 <img
-                src={`http://127.0.0.1:8000/storage/uploads/${FlashTattooImage}`}
+                src={`https://api.le-tatouage.fr/storage/uploads/${FlashTattooImage}`}
                 className="w-100"
                 />
               </Form.Group>

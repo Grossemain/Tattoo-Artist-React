@@ -27,7 +27,7 @@ const SearchForm = () => {
   // Fetch places (artsyles) from API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/artstyles")
+      .get("https://api.le-tatouage.fr/api/artstyles")
       .then((response) => {
         setArtStyles(response.data);
       })
@@ -49,7 +49,7 @@ const SearchForm = () => {
     setHasSearched(true);
 
     // Renseigner l'url de l'api
-    const apiUrl = `http://127.0.0.1:8000/api/users/searchByUsersAndArtstyles?search=${searchQuery}`;
+    const apiUrl = `https://api.le-tatouage.fr/api/users/searchByUsersAndArtstyles?search=${searchQuery}`;
     console.log(results);
     try {
       const response = await fetch(apiUrl, {
