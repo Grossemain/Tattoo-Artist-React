@@ -1,29 +1,27 @@
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
-import ResultCard from './ResultCard';
+import ResultCard from "./ResultCard";
 
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-
 const SearchForm = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
 
   const [artstyles, setArtStyles] = useState([]);
-
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
   console.log(results.values);
 
-    //On appel les ArtStyles
+  //On appel les ArtStyles
   // Fetch places (artsyles) from API
   useEffect(() => {
     axios
@@ -40,8 +38,6 @@ const SearchForm = () => {
     setArtStyles(event.target.value);
   };
 
-
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -53,33 +49,27 @@ const SearchForm = () => {
     console.log(results);
     try {
       const response = await fetch(apiUrl, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ search: searchQuery })
+        body: JSON.stringify({ search: searchQuery }),
       });
 
       const data = await response.json();
       setResults(data);
-
     } catch (error) {
       console.error("Erreur lors de la recherche:", error);
     }
-
-    
-
   };
 
   return (
     <Container fluid="md">
       <section className="Recherche">
         <div className="col-12 col-md-8 mx-auto hero-content">
-          <div className="text-dark text-center mb-5">
-
-          </div>
+          <div className="text-dark text-center mb-5"></div>
           <div className="main-search-bar rounded-pill bg-white ">
-            <Form onSubmit={handleFormSubmit} >
+            <Form onSubmit={handleFormSubmit}>
               <Row className="align-items-center d-flex justify-content-between">
                 <Col className="d-flex justify-content-start">
                   <div className="border-end flex-grow-1 d-flex ps-3 d-flex align-items-center">
@@ -88,12 +78,12 @@ const SearchForm = () => {
                       value={searchQuery}
                       onChange={handleInputChange}
                       placeholder="Rechercher un tatoueur"
-                      className=" mr-sm-2 rounded-pill border-0 "
+                      className=" mr-sm-2 rounded-pill border-0 input-text"
                     />
                   </div>
                 </Col>
                 <Col>
-                <Form.Control
+                  {/* <Form.Control
                 className='border border-0'
                         as="select"
                         name="artStyle_id"
@@ -105,26 +95,69 @@ const SearchForm = () => {
                             {artstyle.name}
                           </option>
                         ))}
-                      </Form.Control>
+                      </Form.Control> */}
+                  <div className="border border-0">
+                    <select className="border border-0  input-text" id="style-select" name="artStyle_id">
+                      {" "}
+                      <option value="">Sélectionne un style</option>
+                      <option value="minimaliste">Minimaliste</option>{" "}
+                      <option value="realiste">Réalisme</option>{" "}
+                      <option value="polynesien">Polynésien</option>{" "}
+                      <option value="japonais">Japonais</option>{" "}
+                      <option value="aquarelle">Aquarelle</option>{" "}
+                      <option value="old-school">Old School</option>{" "}
+                      <option value="mandala">Mandala</option>{" "}
+                      <option value="graphique">Graphique</option>{" "}
+                      <option value="ornemental">Ornemental</option>{" "}
+                      <option value="celtique">Celtique</option>{" "}
+                      <option value="biomecanique">Biomécanique</option>{" "}
+                      <option value="tribal">Tribal</option>{" "}
+                      <option value="fineline">Fineline</option>{" "}
+                      <option value="handpoke">Handpoke</option>{" "}
+                      <option value="animaux">Animaux</option>{" "}
+                      <option value="manga">Manga</option>{" "}
+                      <option value="lettrage">Lettrage</option>{" "}
+                      <option value="viking">Viking</option>{" "}
+                      <option value="dotwork">Dotwork</option>{" "}
+                      <option value="trait-fin">Trait fin</option>{" "}
+                      <option value="cover">Cover</option>{" "}
+                      <option value="doigt">Doigt</option>{" "}
+                      <option value="cartoon">Cartoon</option>{" "}
+                      <option value="portrait">Portrait</option>{" "}
+                      <option value="geometrique">Géométrique</option>{" "}
+                      <option value="fleur">Fleur</option>{" "}
+                      <option value="calligraphie">Calligraphie</option>{" "}
+                    </select>
+                  </div>
                 </Col>
-                
+
                 <Col className="d-flex justify-content-end">
-                  <Button className="bouton" type="submit">Rechercher</Button>
+                  <Button className="bouton" type="submit">
+                    Rechercher
+                  </Button>
                 </Col>
               </Row>
             </Form>
           </div>
         </div>
       </section>
+      <div className="styled-text mt-3">
+            <p>
+              Entre un mot-clé : nom d'un tatoueur, ville, departement ou style
+              : exemple Nantes.
+            </p>
+            </div>
       <section className="Resultat">
         <Container fluid="md">
           <Row>
             <Col>
               {results.length > 0 ? (
-                <div className= "row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
-                  {results.map((user, index) => (
-                      user.role_id !== 2 && user.user_id >= 4 && <ResultCard key={user} user={user}/>
-                  ))}
+                <div className="row row-cols-1 row-cols-md-3 g-4 m-3 rounded-3 mt-4">
+                  {results.map(
+                    (user, index) =>
+                      user.role_id !== 2 &&
+                      user.user_id >= 4 && <ResultCard key={user} user={user} />
+                  )}
                 </div>
               ) : (
                 hasSearched && <p>Aucun résultat trouvé</p>
@@ -133,8 +166,8 @@ const SearchForm = () => {
           </Row>
         </Container>
       </section>
-    </Container >
+    </Container>
   );
-}
+};
 
 export default SearchForm;
