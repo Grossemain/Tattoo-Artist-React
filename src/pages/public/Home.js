@@ -51,7 +51,7 @@ export class Home extends Component {
                   </li>
                   <p>
                     Tu recherche un tatoueur dans un style particulier ? Sache
-                    qu’en France, tu asle choix et c’est sur notre site que tu
+                    qu’en France, tu as le choix et c’est sur notre site que tu
                     trouverera tous les styles des tatoueurs Français.
                   </p>
                 </ul>

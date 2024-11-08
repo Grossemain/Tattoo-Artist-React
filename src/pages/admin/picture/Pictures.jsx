@@ -92,7 +92,7 @@ const Pictures = () => {
                     <Button variant="success">
                       <Link
                         className="text-light text-decoration-none"
-                        to={`/pictures/${Picture.picture_id}`}
+                        to={`/galerie/${Picture.picture_id}`}
                       >
                         Voir
                       </Link>

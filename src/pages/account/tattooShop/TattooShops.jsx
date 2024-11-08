@@ -70,7 +70,7 @@ const TattooShops = () => {
                     <Button variant="primary">
                       <Link
                         className="text-light text-decoration-none"
-                        to={`/admin/tattooshops/edit/${TattooShop.tattooshop_id}`}
+                        to={`/mon-compte/tattooshops/edit/${TattooShop.tattooshop_id}`}
                       >
                         Edit
                       </Link>

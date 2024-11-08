@@ -58,7 +58,7 @@ const Articles = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="primary">
-                                            <Link className="text-light text-decoration-none"to={`/admin/articles/edit/${Article.article_id}`}>Edit</Link>
+                                            <Link className="text-light text-decoration-none"to={`/mon-compte/articles/edit/${Article.article_id}`}>Edit</Link>
                                         </Button>
                                     </span>
                                     <span className="m-1">

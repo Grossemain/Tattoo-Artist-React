@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ULayout, Account } from "../admin";
 import { User,UEdit } from "../admin/user/";
-import { Pictures, PAdd, PEdit } from "../admin/picture";
-import { FlashTattoos, FTAdd, FTEdit } from "../admin/flashTattoo";
-import { TattooShops, TSAdd, TSEdit } from "../admin/tattooShop";
-import { Articles, AAdd, AEdit } from "../admin/Article";
+import { Pictures, PAdd, PEdit } from "../account/picture";
+import { FlashTattoos, FTAdd, FTEdit } from "../account/flashTattoo";
+import { TattooShops, TSAdd, TSEdit } from "../account/tattooShop";
+import { Articles, AAdd, AEdit } from "../account/Article";
 import { accountService } from "../../_services";
 
 

@@ -86,7 +86,7 @@ const FlashTattoos = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="success">
-                                            <Link className="text-light text-decoration-none"to={`/flashtattoos/${FlashTattoo.flashtattoo_id}`}>Voir</Link>
+                                            <Link className="text-light text-decoration-none"to={`/flash/${FlashTattoo.flashtattoo_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>

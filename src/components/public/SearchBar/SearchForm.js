@@ -96,9 +96,10 @@ const SearchForm = () => {
                           </option>
                         ))}
                       </Form.Control> */}
-                  <div className="border border-0">
-                    <select className="border border-0  input-text" id="style-select" name="artStyle_id">
-                      {" "}
+                      <Form.Control
+                className='border border-0 input-text'
+                        as="select"
+                        name="artStyle_id">
                       <option value="">Sélectionne un style</option>
                       <option value="minimaliste">Minimaliste</option>{" "}
                       <option value="realiste">Réalisme</option>{" "}
@@ -127,8 +128,7 @@ const SearchForm = () => {
                       <option value="geometrique">Géométrique</option>{" "}
                       <option value="fleur">Fleur</option>{" "}
                       <option value="calligraphie">Calligraphie</option>{" "}
-                    </select>
-                  </div>
+                  </Form.Control>
                 </Col>
 
                 <Col className="d-flex justify-content-end">

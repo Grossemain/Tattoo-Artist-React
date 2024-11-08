@@ -3,33 +3,45 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 import { Link } from 'react-router-dom'
-import { articleService } from '../../../_services/article.service';
+import { flashtattooService } from '../../../_services/flashtattoo.service';
+import { userService } from '../../../_services/user.service';
 
-const Articles = () => {
-    const [Articles, setArticles] = useState([])
+const FlashTattoos = () => {
+    const [FlashTattoos, setFlashTattoos] = useState([])
     const flag = useRef(false)
+    const [userId, setUserId] = useState();
+
+    //on recupere l'utilisateur connecté
+  useEffect(() => {
+    userService
+    .getCurrentUser()
+    .then((res) => {
+        setUserId(res.data.user_id);
+        console.log("currentUser: " + res.data.user_id);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
+
 
     // Récupération de la liste des utilisateurs à l'affichage
     useEffect(() => {
-        if(flag.current === false){
-            articleService.getAllArticles()
+            flashtattooService.getUserFlashTattoos(userId)
                 .then(res => {
                     // Liste dans le state
-                    setArticles(res.data)
+                    setFlashTattoos(res.data)
                 })
                 .catch(err => console.log(err))
-        }
-
-        return () => flag.current = true
-        
-    }, [])
+    }, [userId]);
 
     // Gestion du bouton de suppression d'un utilisateur
-    const delArticle = (ArticleId) => {
-        articleService.deleteArticle(ArticleId)
+    const delFlashTattoo = (FlashTattooId) => {
+        flashtattooService.deleteFlashTattoo(FlashTattooId)
             .then(res => {
                 // Mise à jour du state pour affichage
-                setArticles((current) => current.filter(Article => Article.id !== ArticleId))
+                setFlashTattoos((current) => current.filter(FlashTattoo => FlashTattoo.id !== FlashTattooId))
             })
             .catch(err => console.log(err))
     }
@@ -41,30 +53,32 @@ const Articles = () => {
                 <thead>
                     <tr>
                     <th>id</th>
-                        <th>title</th>
+                    <th>User-id</th>
                         <th>Image</th>
-                        <th>Tattooshop_id</th>
+                        <th>titre</th>
+                        <th>Dispo</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {Articles.map((Article) => (
-                            <tr key={Article.id}>
-                                <td>{Article.article_id}</td>
-                                <td>{Article.title}</td>
-                                <td>{Article.img}</td>
-                                <td>{Article.tattooshop_id}</td>
+                    {FlashTattoos.map((FlashTattoo) => (
+                            <tr key={FlashTattoo.id}>
+                                <td>{FlashTattoo.flashtattoo_id}</td>
+                                <td>{FlashTattoo.user_id}</td>
+                                <td>{FlashTattoo.img_flashtattoo}</td>
+                                <td>{FlashTattoo.h1_title}</td>
+                                <td>{FlashTattoo.disponibility}</td>
                                 <td>
                                     <span className="m-1">
                                     <Button
                                             variant="primary">
-                                            <Link className="text-light text-decoration-none"to={`/admin/articles/edit/${Article.article_id}`}>Edit</Link>
+                                            <Link className="text-light text-decoration-none"to={`/mon-compte/flashtattoos/edit/${FlashTattoo.flashtattoo_id}`}>Edit</Link>
                                         </Button>
                                     </span>
                                     <span className="m-1">
                                         <Button
                                             variant="danger"
-                                            onClick={() => delArticle(Article.article_id)}
+                                            onClick={() => delFlashTattoo(FlashTattoo.flashtattoo_id)}
                                         >
                                             Supprimer
                                         </Button>
@@ -72,7 +86,7 @@ const Articles = () => {
                                     <span className="m-1">
                                     <Button
                                             variant="success">
-                                            <Link className="text-light text-decoration-none"to={`/article/${Article.article_id}`}>Voir</Link>
+                                            <Link className="text-light text-decoration-none"to={`/flash/${FlashTattoo.flashtattoo_id}`}>Voir</Link>
                                         </Button>
                                     </span>
                                     </td>
@@ -86,4 +100,4 @@ const Articles = () => {
     );
 };
 
-export default Articles;
+export default FlashTattoos;

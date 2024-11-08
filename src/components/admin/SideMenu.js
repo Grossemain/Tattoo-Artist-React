@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 
 const SideMenu = () => {
   return (
-    <Container fluid="md-3 bg-dark text-light">
+    <Container fluid="full-height-container bg-dark text-light">
       <Row>
         <Col>
           <Nav defaultActiveKey="/home" className="flex-column">
@@ -39,6 +39,10 @@ const SideMenu = () => {
             <Nav.Link href="/admin/articles/add">Ajouter un Article</Nav.Link>
 
           </Nav>
+          <div className="Mentions">
+<p>Copyright :
+Romain Maillet</p>
+          </div>
         </Col>
       </Row>
     </Container>

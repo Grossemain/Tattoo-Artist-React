@@ -3,18 +3,19 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 
 import { Link } from "react-router-dom";
-import { tattooshopService } from "../../../_services/tattooshop.service";
+import { pictureService } from "../../../_services/picture.service";
+import axios from "axios";
 import { userService } from "../../../_services/user.service";
 
-const TattooShops = () => {
-  const [TattooShops, setTattooShops] = useState([]);
+const Pictures = () => {
+  const [Pictures, setPictures] = useState([]);
   const [userId, setUserId] = useState();
 
   //on recupere l'utilisateur connecté
   useEffect(() => {
     userService
-      .getCurrentUser()
-      .then((res) => {
+    .getCurrentUser()
+    .then((res) => {
         setUserId(res.data.user_id);
         console.log("currentUser: " + res.data.user_id);
       })
@@ -23,25 +24,26 @@ const TattooShops = () => {
       });
   });
 
-  // Récupération de la liste des utilisateurs à l'affichage
+
+  // Récupération de la liste des pictures par user à l'affichage
   useEffect(() => {
-    tattooshopService
-      .getUserTattooshops(userId)
+    pictureService
+      .getUserPictures(userId)
       .then((res) => {
         // Liste dans le state
-        setTattooShops(res.data);
+        setPictures(res.data);
       })
       .catch((err) => console.log(err));
   }, [userId]);
 
   // Gestion du bouton de suppression d'un utilisateur
-  const delTattooShop = (TattooShopId) => {
-    tattooshopService
-      .deleteTattooShop(TattooShopId)
+  const delPicture = (PictureId) => {
+    pictureService
+      .deletePicture(PictureId)
       .then((res) => {
         // Mise à jour du state pour affichage
-        setTattooShops((current) =>
-          current.filter((TattooShop) => TattooShop.id !== TattooShopId)
+        setPictures((current) =>
+          current.filter((Picture) => Picture.id !== PictureId)
         );
       })
       .catch((err) => console.log(err));
@@ -54,23 +56,25 @@ const TattooShops = () => {
           <thead>
             <tr>
               <th>id</th>
-              <th>Nom</th>
+              <th>User-id</th>
               <th>Image</th>
+              <th>alt</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {TattooShops.map((TattooShop) => (
-              <tr key={TattooShop.id}>
-                <td>{TattooShop.tattooshop_id}</td>
-                <td>{TattooShop.name}</td>
-                <td>{TattooShop.img_tattooshop}</td>
+            {Pictures.map((Picture) => (
+              <tr key={Picture.id}>
+                <td>{Picture.picture_id}</td>
+                <td>{Picture.user_id}</td>
+                <td>{Picture.image}</td>
+                <td>{Picture.alt}</td>
                 <td>
                   <span className="m-1">
                     <Button variant="primary">
                       <Link
                         className="text-light text-decoration-none"
-                        to={`/admin/tattooshops/edit/${TattooShop.tattooshop_id}`}
+                        to={`/mon-compte/pictures/edit/${Picture.picture_id}`}
                       >
                         Edit
                       </Link>
@@ -79,7 +83,7 @@ const TattooShops = () => {
                   <span className="m-1">
                     <Button
                       variant="danger"
-                      onClick={() => delTattooShop(TattooShop.tattooshop_id)}
+                      onClick={() => delPicture(Picture.picture_id)}
                     >
                       Supprimer
                     </Button>
@@ -88,7 +92,7 @@ const TattooShops = () => {
                     <Button variant="success">
                       <Link
                         className="text-light text-decoration-none"
-                        to={`/tattooshop/${TattooShop.tattooshop_id}`}
+                        to={`/galerie/${Picture.picture_id}`}
                       >
                         Voir
                       </Link>
@@ -104,4 +108,4 @@ const TattooShops = () => {
   );
 };
 
-export default TattooShops;
+export default Pictures;

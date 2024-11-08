@@ -80,7 +80,7 @@ const ArticleCreate = () => {
                       setArticleContent(event.target.value);
                     }}
                     as="textarea"
-                    placeholder="Contenu de l'article "
+                    placeholder="Contenu de l'article"
                     style={{ height: "500px" }}
                   />
                 </FloatingLabel>

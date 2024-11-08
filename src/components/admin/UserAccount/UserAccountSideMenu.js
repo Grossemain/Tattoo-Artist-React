@@ -32,6 +32,10 @@ const SideMenu = () => {
             <Nav.Link href="/mon-compte/articles/add">Ajouter un Article</Nav.Link>
 
           </Nav>
+          <div className="Mentions">
+<p>Copyright :
+Romain Maillet</p>
+          </div>
         </Col>
       </Row>
     </Container>
