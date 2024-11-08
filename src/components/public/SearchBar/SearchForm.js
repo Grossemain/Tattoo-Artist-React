@@ -68,85 +68,72 @@ const SearchForm = () => {
       <section className="Recherche">
         <div className="col-12 col-md-8 mx-auto hero-content">
           <div className="text-dark text-center mb-5"></div>
-          <div className="main-search-bar rounded-pill bg-white ">
+          <div className="main-search-bar rounded-pill bg-white">
             <Form onSubmit={handleFormSubmit}>
-              <Row className="align-items-center d-flex justify-content-between">
-                <Col className="d-flex justify-content-start">
-                  <div className="border-end flex-grow-1 d-flex ps-3 d-flex align-items-center">
+              <div className="form-row">
+                <div className="form-col">
+                  <div className="input-container">
                     <Form.Control
                       type="text"
                       value={searchQuery}
                       onChange={handleInputChange}
-                      placeholder="Rechercher un tatoueur"
-                      className=" mr-sm-2 rounded-pill border-0 input-text"
+                      placeholder="🔎 un tatoueur"
+                      className="input-text"
                     />
                   </div>
-                </Col>
-                <Col>
-                  {/* <Form.Control
-                className='border border-0'
-                        as="select"
-                        name="artStyle_id"
-                        onChange={handleChangeArtStyles}
-                      >
-                        <option value="">Sélectionne un style</option>
-                        {artstyles.map((artstyle) => (
-                          <option key={artstyle.id} value={artstyle.artstyle_id}>
-                            {artstyle.name}
-                          </option>
-                        ))}
-                      </Form.Control> */}
-                      <Form.Control
-                className='border border-0 input-text'
-                        as="select"
-                        name="artStyle_id">
-                      <option value="">Sélectionne un style</option>
-                      <option value="minimaliste">Minimaliste</option>{" "}
-                      <option value="realiste">Réalisme</option>{" "}
-                      <option value="polynesien">Polynésien</option>{" "}
-                      <option value="japonais">Japonais</option>{" "}
-                      <option value="aquarelle">Aquarelle</option>{" "}
-                      <option value="old-school">Old School</option>{" "}
-                      <option value="mandala">Mandala</option>{" "}
-                      <option value="graphique">Graphique</option>{" "}
-                      <option value="ornemental">Ornemental</option>{" "}
-                      <option value="celtique">Celtique</option>{" "}
-                      <option value="biomecanique">Biomécanique</option>{" "}
-                      <option value="tribal">Tribal</option>{" "}
-                      <option value="fineline">Fineline</option>{" "}
-                      <option value="handpoke">Handpoke</option>{" "}
-                      <option value="animaux">Animaux</option>{" "}
-                      <option value="manga">Manga</option>{" "}
-                      <option value="lettrage">Lettrage</option>{" "}
-                      <option value="viking">Viking</option>{" "}
-                      <option value="dotwork">Dotwork</option>{" "}
-                      <option value="trait-fin">Trait fin</option>{" "}
-                      <option value="cover">Cover</option>{" "}
-                      <option value="doigt">Doigt</option>{" "}
-                      <option value="cartoon">Cartoon</option>{" "}
-                      <option value="portrait">Portrait</option>{" "}
-                      <option value="geometrique">Géométrique</option>{" "}
-                      <option value="fleur">Fleur</option>{" "}
-                      <option value="calligraphie">Calligraphie</option>{" "}
+                </div>
+                <div className="form-col">
+                  <Form.Control
+                    className="input-text border border-0"
+                    as="select"
+                    name="artStyle_id"
+                  >
+                    <option value="">Sélectionne un style</option>
+                    <option value="minimaliste">Minimaliste</option>
+                    <option value="realiste">Réalisme</option>
+                    <option value="polynesien">Polynésien</option>
+                    <option value="japonais">Japonais</option>
+                    <option value="aquarelle">Aquarelle</option>
+                    <option value="old-school">Old School</option>
+                    <option value="mandala">Mandala</option>
+                    <option value="graphique">Graphique</option>
+                    <option value="ornemental">Ornemental</option>
+                    <option value="celtique">Celtique</option>
+                    <option value="biomecanique">Biomécanique</option>
+                    <option value="tribal">Tribal</option>
+                    <option value="fineline">Fineline</option>
+                    <option value="handpoke">Handpoke</option>
+                    <option value="animaux">Animaux</option>
+                    <option value="manga">Manga</option>
+                    <option value="lettrage">Lettrage</option>
+                    <option value="viking">Viking</option>
+                    <option value="dotwork">Dotwork</option>
+                    <option value="trait-fin">Trait fin</option>
+                    <option value="cover">Cover</option>
+                    <option value="doigt">Doigt</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="portrait">Portrait</option>
+                    <option value="geometrique">Géométrique</option>
+                    <option value="fleur">Fleur</option>
+                    <option value="calligraphie">Calligraphie</option>
                   </Form.Control>
-                </Col>
-
-                <Col className="d-flex justify-content-end">
+                </div>
+                <div className="form-col button-container">
                   <Button className="bouton" type="submit">
                     Rechercher
                   </Button>
-                </Col>
-              </Row>
+                </div>
+              </div>
             </Form>
           </div>
         </div>
       </section>
       <div className="styled-text mt-3">
-            <p>
-              Entre un mot-clé : nom d'un tatoueur, ville, departement ou style
-              : exemple Nantes.
-            </p>
-            </div>
+        <p>
+          Entre un mot-clé : nom d'un tatoueur, ville, département ou style :
+          exemple Nantes.
+        </p>
+      </div>
       <section className="Resultat">
         <Container fluid="md">
           <Row>
@@ -156,7 +143,9 @@ const SearchForm = () => {
                   {results.map(
                     (user, index) =>
                       user.role_id !== 2 &&
-                      user.user_id >= 4 && <ResultCard key={user} user={user} />
+                      user.user_id >= 4 && (
+                        <ResultCard key={user.user_id} user={user} />
+                      )
                   )}
                 </div>
               ) : (

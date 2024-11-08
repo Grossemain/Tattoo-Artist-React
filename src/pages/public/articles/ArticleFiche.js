@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { userService, articleService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { articleService } from "../../../_services";
+import { useParams, Link } from "react-router-dom";
 import TattooArtistGalleryList from "../../../components/public/Users/TattooArtistGalleryList";
 
 const ArticleFiche = () => {
@@ -16,7 +16,14 @@ const ArticleFiche = () => {
       .catch((err) => console.log(err));
     // eslint-disable-next-line
   }, []);
-  console.log("Article:" + article);
+
+  // Fonction pour formater la date
+  const formatDate = (dateString) => {
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+  };
+
+  console.log("Article:", article);
 
   return (
     <div className="Profil">
@@ -32,13 +39,21 @@ const ArticleFiche = () => {
               alt={`${article.title}`}
             />
             <Row>
+              {/* <Col>
+                <div className="ElementProfil">{article.tattooshop_id}</div>
+              </Col> */}
               <Col>
-                <div className="ElementProfil">{article.tattooshop_id }</div>
-              </Col>
-              <Col>
-                <div className="ElementProfil">{article.created_at}</div>
+                <div className="ElementProfil">{formatDate(article.created_at)}</div>
               </Col>
             </Row>
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/articles/`}
+              >
+                Retour
+              </Link>
+            </Button>
           </Col>
           <Col sm={8}>
             <div className="Description">{article.content}</div>

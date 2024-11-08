@@ -2,6 +2,7 @@
 
 /*HEADER*/
 
+
 .HomeHeader {
     display: flex;
     background-color: $white;
@@ -15,36 +16,43 @@
 }
 
 .HomeSection-1 {
-    display: wrap;
     background-color: $color-1;
-    color:$white;
-    margin-top:20px;
+    color: $white;
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
+
     ul {
         list-style: $sansPucesUlListStyle;
+
         span {
-            font-size:$sansPucesSpanFontSize;
+            font-size: $sansPucesSpanFontSize;
         }
     }
-    h2{
+
+    h2 {
         color: $color-2;
         text-align: center;
-        margin:20px;
-    }
-    img{
-        padding:15px;
+        margin: 20px;
     }
 
-// @media (max-width: 600px) {
-//     div {
-//         img {
+    img {
+        padding: 15px;
+    }
 
-//         }
-//     }
-// }
+    // Media query for responsiveness
+    @media (max-width: 1000px) {
+        .row {
+            flex-direction: column;
 
+            .col {
+                width: 100%;
+                margin-bottom: 20px; // adjust margin as needed
+            }
+        }
+    }
 }
+
 
 /*SECTION 2*/
 

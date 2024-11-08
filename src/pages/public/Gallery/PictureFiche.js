@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { userService, pictureService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const PictureFiche = () => {
   const [picture, setPicture] = useState({});
@@ -38,9 +38,17 @@ const PictureFiche = () => {
             {picture.user && (
               <div className="ElementProfil">{picture.user.city} </div>
             )}
-                        {picture.user && (
+            {picture.user && (
               <div className="ElementProfil">{picture.user.departement} </div>
             )}
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/galerie/`}
+              >
+                Retour
+              </Link>
+            </Button>
           </Col>
         </Row>
       </Container>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { artstyleService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const ArtStyleFiche = () => {
   const [artstyle, setArtstyle] = useState({});
@@ -32,9 +32,14 @@ const ArtStyleFiche = () => {
           </Col>
           <Col sm={8}>
             <div className="Description">{artstyle.description}</div>
-            <div className="Gallerie">
-              {/* /creer un composant image list de Mui/ */}
-            </div>
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/styles/`}
+              >
+                Retour
+              </Link>
+            </Button>
           </Col>
         </Row>
       </Container>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { userService, tattooshopService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import TattooArtistGalleryList from "../../../components/public/Users/TattooArtistGalleryList";
 
 const TattooShopFiche = () => {
@@ -47,6 +47,14 @@ const TattooShopFiche = () => {
               </Col>
 
             </Row>
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/tatoueurs/`}
+              >
+                Retour
+              </Link>
+            </Button>
           </Col>
           <Col sm={8}>
             <div className="Description">{tattooShop.meta_description}</div>

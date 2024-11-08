@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { userService, flashtattooService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const FlashFiche = () => {
   const [flashTattoo, setFlashTattoo] = useState({});
@@ -25,17 +25,31 @@ const FlashFiche = () => {
           <div className="separatorCenter">
             <span className="separator"></span>
           </div>
-          <Col sm={4}>
+          <Col sm={8}>
             <img
               src={`https://api.le-tatouage.fr/storage/uploads/${flashTattoo.img_flashtattoo}`}
               alt={`${flashTattoo.title}`}
             />
           </Col>
-          <Col sm={8}>
+          <Col sm={4}>
           <div className="Description">{flashTattoo.content}</div>
-            <div className="Gallerie">
-              {/* /creer un composant image list de Mui/ */}
-            </div>
+          {flashTattoo.user && (
+              <div className="ElementProfil">{flashTattoo.user.pseudo_user}</div>
+            )}
+            {flashTattoo.user && (
+              <div className="ElementProfil">{flashTattoo.user.city} </div>
+            )}
+            {flashTattoo.user && (
+              <div className="ElementProfil">{flashTattoo.user.departement} </div>
+            )}
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/flash/`}
+              >
+                Retour
+              </Link>
+            </Button>
           </Col>
         </Row>
       </Container>

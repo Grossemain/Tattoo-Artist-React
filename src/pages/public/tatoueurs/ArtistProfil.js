@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { userService } from "../../../_services";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PictureGalleryList from "../../../components/public/Pictures/PictureGalleryList";
 
 const ArtistProfil = () => {
@@ -56,6 +56,16 @@ const ArtistProfil = () => {
                   <a href={`mailto:${artist.email_contact}`}>Contact</a>
                 </div>
               </Col>
+            </Row>
+            <Row>
+            <Button className="bouton-retour w-100">
+              <Link
+                className="text-light text-decoration-none"
+                to={`/tatoueurs/`}
+              >
+                Retour
+              </Link>
+            </Button>
             </Row>
           </Col>
           <Col sm={8}>
