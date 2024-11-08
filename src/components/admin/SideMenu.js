@@ -11,38 +11,34 @@ const SideMenu = () => {
       <Row>
         <Col>
           <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link href="/admin/dashboard">DASHBOARD</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/dashboard">DASHBOARD</Nav.Link>
             <Nav.Link href="/home">Voir le site</Nav.Link>
 
             <span>USERS</span>
 
 
             <span>COMPTE</span>
-            <Nav.Link href="/admin/users/index">Comptes</Nav.Link>
-            <Nav.Link href="/admin/users/edit/">Modifier son compte</Nav.Link>
-            <Nav.Link href="/admin/users/add">Creer un compte</Nav.Link>
-            <Nav.Link href="#">Deconnection</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/users/index">Comptes</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/users/edit/">Modifier son compte</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/users/add">Creer un compte</Nav.Link>
+            <Nav.Link className="a-nav-link" href="#">Deconnection</Nav.Link>
             <span>ARTSTYLES</span>
-            <Nav.Link href="/admin/styles/index">Tous les Styles</Nav.Link>
-            <Nav.Link href="/admin/styles/add">Ajouter un Styles</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/styles/index">Tous les Styles</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/styles/add">Ajouter un Styles</Nav.Link>
             <span>PICTURES</span>
-            <Nav.Link href="/admin/pictures/index">Toutes les images</Nav.Link>
-            <Nav.Link href="/admin/pictures/add">Ajouter une image</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/pictures/index">Toutes les images</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/pictures/add">Ajouter une image</Nav.Link>
             <span>FLASHTATTOOS</span>
-            <Nav.Link href="/admin/flashtattoos/index">Tous les Flash</Nav.Link>
-            <Nav.Link href="/admin/flashtattoos/add">Ajouter un flash</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/flashtattoos/index">Tous les Flash</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/flashtattoos/add">Ajouter un flash</Nav.Link>
             <span>TATTOOSHOPS</span>
-            <Nav.Link href="/admin/tattooshops/index">Tous les TattooShops</Nav.Link>
-            <Nav.Link href="/admin/tattooshops/add">Ajouter un TattooShop</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/tattooshops/index">Tous les TattooShops</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/tattooshops/add">Ajouter un TattooShop</Nav.Link>
             <span>ARTICLES</span>
-            <Nav.Link href="/admin/articles/index">Tous les Articles</Nav.Link>
-            <Nav.Link href="/admin/articles/add">Ajouter un Article</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/articles/index">Tous les Articles</Nav.Link>
+            <Nav.Link className="a-nav-link" href="/admin/articles/add">Ajouter un Article</Nav.Link>
 
           </Nav>
-          <div className="Mentions">
-<p>Copyright :
-Romain Maillet</p>
-          </div>
         </Col>
       </Row>
     </Container>
