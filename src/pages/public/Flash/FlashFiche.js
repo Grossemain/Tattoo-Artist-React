@@ -32,21 +32,29 @@ const FlashFiche = () => {
             />
           </Col>
           <Col sm={4}>
-          <div className="Description">{flashTattoo.content}</div>
-          {flashTattoo.user && (
-              <div className="ElementProfil">{flashTattoo.user.pseudo_user}</div>
+            <div className="Description">{flashTattoo.content}</div>
+            {flashTattoo.user && (
+              <div className="ElementProfil">
+                {flashTattoo.user.pseudo_user}
+              </div>
             )}
             {flashTattoo.user && (
               <div className="ElementProfil">{flashTattoo.user.city} </div>
             )}
             {flashTattoo.user && (
-              <div className="ElementProfil">{flashTattoo.user.departement} </div>
+              <div className="ElementProfil">
+                {flashTattoo.user.departement}{" "}
+              </div>
             )}
+
+            {flashTattoo.user && (
+              <div className="ElementProfil">
+                {flashTattoo.disponibility ? "Disponible" : "Indisponible"}
+              </div>
+            )}
+
             <Button className="bouton-retour w-100">
-              <Link
-                className="text-light text-decoration-none"
-                to={`/flash/`}
-              >
+              <Link className="text-light text-decoration-none" to={`/flash/`}>
                 Retour
               </Link>
             </Button>
